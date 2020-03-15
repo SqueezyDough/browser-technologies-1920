@@ -1,19 +1,17 @@
 # Browser Technologies @cmda-minor-web 1920
 
 ## Assignment 1.2 - Break your OBA App
+### [Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) summarised
 
-
-### Breaking other websites
-The first part of thhe assgnment was to try to break other websites first and see how they could be improved. I've tested both 'big' websites as websites from local businesses around me.
-
-#### [Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) summarised
-
-##### `The graceful degration` VS `The progressive enhancement` perspective
+#### `The graceful degration` VS `The progressive enhancement` perspective
 Graceful degration (GD) focusen on creating websites for the newest browsers. Applications work great on these browsers, but GD accepts compromises on older browsers, aiming for only a passible user experience. Browsers incompatibility is only `patched` in the last quarter of the development cycle (if not after release).
 
 Progessive enhancement (PE) focuses on the content, not the browser. Websites should be functional from their `core`, the content, and should be enhanced through firstly CSS for stylistic purposes, and lastly javascript to create a rich user experience. PE creates a layered user experience with built-in fallbacks if things doesn't go as planned.
 
 ------
+
+### Breaking other websites
+The first part of thhe assgnment was to try to break other websites first and see how they could be improved. I've tested both 'big' websites as websites from local businesses around me.
 
 #### Tested Features
 ##### Disable colors and enable colorblind mode
