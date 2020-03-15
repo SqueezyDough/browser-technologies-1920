@@ -5,9 +5,34 @@
 ### Breaking other websites
 The first part of thhe assgnment was to try to break other websites first and see how they could be improved. I've tested both 'big' websites as websites from local businesses around me.
 
-#### Tested features
+#### Summary [Understanding progressive enchancement] (https://alistapart.com/article/understandingprogressiveenhancement/) 
+
+
+#### Tested Features
 ##### Disable colors and enable colorblind mode
-###### How to test
+How to: there are several browser plugins you can install to simulate color blindness
+
+Results: 
+* Most websites handle contrast very well.
+* Visited buttons can often not be distinguish.
+* Charts that only use color coding to distuinguish values cannot be read by color blind people.
+* Switching colors off or users that have a monochromacy color blindless type make sites that use/prefer dark mode makes sites that contains lots of images look very dark.
+
+Fixes:
+* Add a 'visited' title or a checkmark for visited links.
+* Use labels or titles for color coded charts.
+* Use dark mode as a slider that lightens / darkens the back- and foreground colors (images too if needed).
+
+##### Disable local storage and cookies
+How to: cookies and local storage cannot be disabled indiviually. This makes it more challenging to identify the issue. Checking the error messages in the console might help you to identify the issue. To disable both cookies and local storage in chrome, enter the following value in the url bar: chrome://settings/content/cookies?search=site+set and disable `Allow sites to save and read cookie data (recommended)`. Don't forget to enable the feature after testing.
+
+Results:
+* Webshops always use cookies to make the cart items persits through the website. Disabling cookies make it impossible to order anything.
+* Twitch.tv keeps showing a loading indicator. The page will actually never load. This is because the site depends on local storage. Looking at the console helped me to identify this issue.
+
+Fixes:
+* Creata a fallback that checks if a cookie can be set. If not, it will not be possible to order multiple items, so the user will be kindly asked to either buy one item at a time or enable cookies.
+* Twitch.tv shouldn't depend on localstorage. It should check if localstorage can be set or get. If not, it should find another way to make their website function as intended. 
 
 
 ### Features
