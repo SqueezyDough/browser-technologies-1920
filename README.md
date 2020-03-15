@@ -35,11 +35,16 @@ How to: cookies and local storage cannot be disabled indivually. This makes it m
 
 Results:
 * Webshops always use cookies to make the cart items persits through the website. Disabling cookies make it impossible to order anything.
-![image](https://user-images.githubusercontent.com/33430653/76712773-d693a680-671b-11ea-8484-86910886749d.png)
+![Zalando](https://user-images.githubusercontent.com/33430653/76712773-d693a680-671b-11ea-8484-86910886749d.png)
+Zalando will make the add to cart button red when clicking on it. No explanation about what happened and how to fix it is provided to the user.
+
+------
 
 * Twitch.tv keeps showing a loading indicator. The page will actually never load. This is because the site depends on local storage. Looking at the console helped me to identify this issue.
-![image](https://user-images.githubusercontent.com/33430653/76712777-da272d80-671b-11ea-8828-939bc4b1c392.png)
+![Twitch](https://user-images.githubusercontent.com/33430653/76712777-da272d80-671b-11ea-8828-939bc4b1c392.png)
+Twitch will never stop loading its localstorage dependant content.
 
+------
 
 Fixes:
 * Creata a fallback that checks if a cookie can be set. If not, it will not be possible to order multiple items, so the user will be kindly asked to either buy one item at a time or enable cookies.
