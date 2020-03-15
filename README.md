@@ -40,11 +40,11 @@ Zalando will make the add to cart button red when clicking on it. No explanation
 
 * Twitch.tv keeps showing a loading indicator. The page will actually never load. This is because the site depends on local storage. Looking at the console helped me to identify this issue.
 ![Twitch](https://user-images.githubusercontent.com/33430653/76712777-da272d80-671b-11ea-8828-939bc4b1c392.png)
-Twitch will never stop loading its localstorage dependant content.
+Twitch will never stop loading its local storage dependant content.
 
 Fixes:
 * Creata a fallback that checks if a cookie can be set. If not, it will not be possible to order multiple items, so the user will be kindly asked to either buy one item at a time or enable cookies.
-* Twitch.tv shouldn't depend on localstorage. It should check if localstorage can be set or get. If not, it should find another way to make their website function as intended. 
+* Twitch.tv shouldn't depend on local storage. It should check if local storage can be set or get. If not, it should find another way to make their website function as intended. 
 
 ------
 
