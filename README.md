@@ -6,12 +6,12 @@
 ### Breaking other websites
 The first part of thhe assgnment was to try to break other websites first and see how they could be improved. I've tested both 'big' websites as websites from local businesses around me.
 
-#### Summary [Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/)
+#### [Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) summarised
 
 ##### `The graceful degration` VS `The progressive enhancement` perspective
 Graceful degration (GD) focusen on creating websites for the newest browsers. Applications work great on these browsers, but GD accepts compromises on older browsers, aiming for only a passible user experience. Browsers incompatibility is only `patched` in the last quarter of the development cycle (if not after release).
 
-Progessive enhancement (PE) focuses on the content, not the browser. Websites should be functional from their `core`, the content, and should be enhanced through firstly CSS for stylistic purposes, and lastly javascript to create a rich user experience. PE creates a layered user experience with build-in fallbacks if things doesn't go as plannend.
+Progessive enhancement (PE) focuses on the content, not the browser. Websites should be functional from their `core`, the content, and should be enhanced through firstly CSS for stylistic purposes, and lastly javascript to create a rich user experience. PE creates a layered user experience with built-in fallbacks if things doesn't go as plannend.
 
 ------
 
@@ -97,7 +97,7 @@ Broke everything
 * No browser support for imports
 
 Possible fix: 
-* Use a buildtool to compile css variables to normal css values. A build tool can also minify javascript into a single file which will fix javascript form working on IE11, because it won't support imports. 
+* Use a build tool to compile css variables to normal css values. A build tool can also minify javascript into a single file which will fix javascript form working on IE11, because it won't support imports. 
 * Fetch can be replaced with its older brother XmlHttpRequest which is supported on all browsers, both old and new.
 * Add support queries to create a fallback for transform properties.
 
@@ -117,6 +117,13 @@ Possible fix:
 ------
 
 ### Screen reader
-* Je kunt de boeken niet van elkaar onderscheiden. Boeken moeten worden genummerd.
-* Als de beschrijven van de boeken lang zijn zal de screenreader niet de Klaar knop voorlezen.
-* Screenreader zal ook boeken voorlezen die je al hebt opgegeten.
+I've used macOS's built-in voice assistent to narrate my OBA App. The page order was narrated coorectly, however there were some unforseen problems:
+
+* You can't distinguish books from eachother. Each book sounds like the summary from the previous book.
+* When the book summaries are longer than average the screenreader hasn't got enough time to narrate all books and the 'Done' button will never be narrated.
+* The screenreader will narrate books that you've already eaten.
+
+Fixes:
+* Books should be numbered.
+* Make the time interval dynamic. Times between new book selections should vary.
+* Books should be removed from the DOM when eaten.
