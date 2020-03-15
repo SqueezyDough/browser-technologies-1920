@@ -34,7 +34,7 @@ Fixes:
 How to: cookies and local storage cannot be disabled indivually. This makes it more challenging to identify the issue. Checking the error messages in the console might help you to identify the issue. To disable both cookies and local storage in chrome, enter the following value in the url bar: chrome://settings/content/cookies?search=site+set and disable `Allow sites to save and read cookie data (recommended)`. Don't forget to enable the feature after testing.
 
 Results:
-* Webshops always use cookies to make the cart items persits through the website. Disabling cookies make it impossible to order anything.
+* Webshops always use cookies to make the cart items persists through the website. Disabling cookies make it impossible to order anything.
 ![Zalando](https://user-images.githubusercontent.com/33430653/76712773-d693a680-671b-11ea-8484-86910886749d.png)
 Zalando will make the add to cart button red when clicking on it. No explanation about what happened and how to fix it is provided to the user.
 
