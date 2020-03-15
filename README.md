@@ -5,17 +5,16 @@
 ### Breaking other websites
 The first part of thhe assgnment was to try to break other websites first and see how they could be improved. I've tested both 'big' websites as websites from local businesses around me.
 
-#### Summary 
-[Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/)
+#### Summary [Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/)
 
 ##### `The graceful degration` VS `The progressive enhancement` perspective
 Graceful degration focusen on creating websites for the newest browsers. Applications should work great on these browsers, but accepts compromises on older browsers, aiming for only a passible user experience. Browsers incompatibility is only 'patched' in the last quarter of the development cycle.
 
-Progessive enhancement focuses on just the content, not the browser. Websites should be functional from their `core`, the content, and should be enhanced through firstly CSS for stylistic purposes and lastly javascript to create a rich user experience.
+Progessive enhancement focuses on just the content, not the browser. Websites should be functional from their `core`, the content, and should be enhanced through firstly CSS for stylistic purposes, and lastly javascript to create a rich user experience.
 
 #### Tested Features
 ##### Disable colors and enable colorblind mode
-How to: there are several browser plugins you can install to simulate color blindness
+How to: there are several browser plugins you can install to simulate color blindness.
 
 Results: 
 * Most websites handle contrast very well.
@@ -40,7 +39,8 @@ Fixes:
 * Twitch.tv shouldn't depend on localstorage. It should check if localstorage can be set or get. If not, it should find another way to make their website function as intended. 
 
 
-### Features
+### Breaking OBA
+#### Features
 - [X] Disable images
 - [ ] Disable mouse/trackpad
 - [X] Disable custom fonts
@@ -49,13 +49,22 @@ Fixes:
 - [ ] Disable local storage / cookies
 - [ ] Enable internet throttling
 
-#### Notes
-##### No JS breaks everything
-  
+##### Failures
+| Feauture | Result | Fix
+| -------- | ------ | -----
+|`Disable images`| All images use their fallback image. Book summaries can still be viewed. | It makes more sense to either only show the book summary or show the book summary on the front and the fallback image on the back to still indicate a image should be there.
 
-* Can't tab through carousel
-* Local storage isn't needed for creating the cards but is needed for saving the choices
-* Site does work when throttled but takes a long time to load without giving feedback to the user
+| Feauture | Result | Fix
+| -------- | ------ | -----
+|`Disable mouse/trackpad` | Can't tab through carousel. | Create a stronger semantic HTML structure. If necessary use `tab-index` to define an index explicitly.
+
+| Feauture | Result | Fix
+| -------- | ------ | -----
+| `Disable local storage / cookies` | Local storage is necessary for saving the book choices. | Use a query string to pass values via routing if local storage is disabled.
+
+| Feauture | Result | Fix
+| -------- | ------ | -----
+| `Enable internet throttling` | Site does work when throttled but takes a long time to load without giving feedback to the user | Give feedback a message that content loads slower than usual.
 
 ## Devices
 ### Macbook Pro (2017, macOS Catalina 10.15)
