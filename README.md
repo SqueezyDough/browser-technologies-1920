@@ -5,8 +5,13 @@
 ### Breaking other websites
 The first part of thhe assgnment was to try to break other websites first and see how they could be improved. I've tested both 'big' websites as websites from local businesses around me.
 
-#### Summary [Understanding progressive enchancement] (https://alistapart.com/article/understandingprogressiveenhancement/) 
+#### Summary 
+[Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/)
 
+##### `The graceful degration` VS `The progressive enhancement` perspective
+Graceful degration focusen on creating websites for the newest browsers. Applications should work great on these browsers, but accepts compromises on older browsers, aiming for only a passible user experience. Browsers incompatibility is only 'patched' in the last quarter of the development cycle.
+
+Progessive enhancement focuses on just the content, not the browser. Websites should be functional from their `core`, the content, and should be enhanced through firstly CSS for stylistic purposes and lastly javascript to create a rich user experience.
 
 #### Tested Features
 ##### Disable colors and enable colorblind mode
