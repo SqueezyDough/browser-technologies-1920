@@ -2,6 +2,7 @@
 
 ## Assignment 1.2 - Break your OBA App
 
+
 ### Breaking other websites
 The first part of thhe assgnment was to try to break other websites first and see how they could be improved. I've tested both 'big' websites as websites from local businesses around me.
 
@@ -11,6 +12,8 @@ The first part of thhe assgnment was to try to break other websites first and se
 Graceful degration focusen on creating websites for the newest browsers. Applications should work great on these browsers, but accepts compromises on older browsers, aiming for only a passible user experience. Browsers incompatibility is only 'patched' in the last quarter of the development cycle.
 
 Progessive enhancement focuses on just the content, not the browser. Websites should be functional from their `core`, the content, and should be enhanced through firstly CSS for stylistic purposes, and lastly javascript to create a rich user experience.
+
+------
 
 #### Tested Features
 ##### Disable colors and enable colorblind mode
@@ -38,6 +41,7 @@ Fixes:
 * Creata a fallback that checks if a cookie can be set. If not, it will not be possible to order multiple items, so the user will be kindly asked to either buy one item at a time or enable cookies.
 * Twitch.tv shouldn't depend on localstorage. It should check if localstorage can be set or get. If not, it should find another way to make their website function as intended. 
 
+------
 
 ### Breaking OBA
 #### Features
@@ -66,20 +70,22 @@ Fixes:
 | -------- | ------ | -----
 | `Enable internet throttling` | Site does work when throttled but takes a long time to load without giving feedback to the user | Give feedback a message that content loads slower than usual.
 
-## Devices
-### Macbook Pro (2017, macOS Catalina 10.15)
-#### Chrome version Chrome 80
+------
+
+### Devices
+#### Macbook Pro (2017, macOS Catalina 10.15)
+##### Chrome version Chrome 80
 Works as intended
 
-#### Firefox version
+##### Firefox version
 Works as intended
 
-#### Safari version 13.1
+##### Safari version 13.1
 * Backface-visibility bug. Card text is visible on front
 * Minor positioning issues
 
-### Microsoft surface (Windows RT 8.1)
-#### Internet explorer version 11.0
+#### Microsoft surface (Windows RT 8.1)
+##### Internet explorer version 11.0
 Broke everything
 
 * No browser support for css variables
@@ -87,14 +93,16 @@ Broke everything
 * No browser support for fetch
 * No browser support for imports
 
-### iPhone 8 (iOS 13.4)
-#### Safari iOS version 13.1, Firefox version 23.0 iOS, Chrome version 80 iOS
+#### iPhone 8 (iOS 13.4)
+##### Safari iOS version 13.1, Firefox version 23.0 iOS, Chrome version 80 iOS
 * Horizontal scrollbar
 * Scaling issue
 * No event to flip card
 * Card position issue
 
-## Screen reader
+------
+
+### Screen reader
 * Je kunt de boeken niet van elkaar onderscheiden. Boeken moeten worden genummerd.
 * Als de beschrijven van de boeken lang zijn zal de screenreader niet de Klaar knop voorlezen.
 * Screenreader zal ook boeken voorlezen die je al hebt opgegeten.
