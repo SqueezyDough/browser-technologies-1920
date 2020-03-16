@@ -11,7 +11,7 @@ Progessive enhancement (PE) focuses on the content, not the browser. Websites sh
 ------
 
 ### Breaking other websites
-The first part of thhe assgnment was to try to break other websites first and see how they could be improved. I've tested both 'big' websites as websites from local businesses around me.
+The first part of the assgnment was to try to break other websites first and see how they could be improved. I've tested both 'big' websites as websites from local businesses around me.
 
 #### Tested Features
 ##### Disable colors and enable colorblind mode
