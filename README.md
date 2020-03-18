@@ -146,18 +146,24 @@ I will build a progressive enhanced survey that 'remembers' your answers when yo
 ### Wireflow
 <img width="750" alt="f79cfc3cf42a0365edf40fe83aecb897" src="https://user-images.githubusercontent.com/33430653/76962825-39ee2600-6920-11ea-9637-da659c125273.png">
 
-#### START
+#### Return PIN
+The return PIN is a identifier to store form progression. The data is stored in a JSON file in local storage and on the server as a fallback.
+
 ##### No storage
 The START page checks whether the user has local storage enables and JS enabled or not. I so it looks for a return pin. The user can provide this is 3 different ways.
 
-##### Automatic return pin
+##### Automatic return PIN
 If the user has a return pin in his local storage, it will automatically display the START - storage screen. Here the user can either continue with his previous session or start a new one.
 
-##### Manual return pin
+##### Manual return PIN
 If the app can't find a return pin in the local storage or either local storage is disabled, the user can still return to his previous session by filling it in the text input or adding it to the url.
 
 #### Functional
+The app uses a progressive disclosed form. The manual return PIN works with HTML and server side rendering.
+
 #### Usable
+The app uses local storage to get the return PIN and fetch the user progression.
+
 #### Pleasurable
 
 ### Features
