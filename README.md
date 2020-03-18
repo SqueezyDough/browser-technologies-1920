@@ -162,7 +162,7 @@ If the app can't find a return pin in the local storage or either local storage 
 The app uses a progressive disclosed form. The manual return PIN works with HTML and server side rendering.
 
 #### Usable
-The app uses local storage to get the return PIN and fetch the user progression.
+The app uses local storage to get the return PIN and fetch the user progression from the server.
 
 #### Pleasurable
 
