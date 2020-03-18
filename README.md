@@ -144,15 +144,24 @@ Fixes:
 I will build a progressive enhanced survey that 'remembers' your answers when you return to the page.
 
 ### Wireflow
+<img width="750" alt="f79cfc3cf42a0365edf40fe83aecb897" src="https://user-images.githubusercontent.com/33430653/76962825-39ee2600-6920-11ea-9637-da659c125273.png">
+
+#### START
+##### No storage
+The START page checks whether the user has local storage enables and JS enabled or not. I so it looks for a return pin. The user can provide this is 3 different ways.
+
+##### Automatic return pin
+If the user has a return pin in his local storage, it will automatically display the START - storage screen. Here the user can either continue with his previous session or start a new one.
+
+##### Manual return pin
+If the app can't find a return pin in the local storage or either local storage is disabled, the user can still return to his previous session by filling it in the text input or adding it to the url.
 
 #### Functional
-
 #### Usable
 #### Pleasurable
 
 ### Features
 * Return PIN that will open the form in its previous closed state.
-* 
 
 #### Browser support
 
