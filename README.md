@@ -1,5 +1,10 @@
 # Browser Technologies @cmda-minor-web 1920
 
+# Table of contents
+* [Assignment 1.2](#Assignment-1.2)
+* [Assignment 2](#Assignment-2)
+
+<a name="Assignment-1.2"></a>
 ## Assignment 1.2 - Break your OBA App
 ### [Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) summarised
 
@@ -132,3 +137,25 @@ Fixes:
 * Books should be numbered.
 * Make the time interval dynamic. Times between new book selections should vary.
 * Books should be removed from the DOM when eaten.
+
+<a name="Assignment-2"></a>
+## Assignment 2
+### Use Case
+I will build a progressive enhanced survey that 'remembers' your answers when you return to the page.
+
+### Wireflow
+
+#### Functional
+
+#### Usable
+#### Pleasurable
+
+### Features
+* Return PIN that will open the form in its previous closed state.
+* 
+
+#### Browser support
+
+#### Accessibility issues
+
+
