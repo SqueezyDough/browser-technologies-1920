@@ -1,3 +1,32 @@
 body {
-    border: 10px solid red;
+    margin: 0;
+    background-color: $red;
+    font-family: $body-font-family;
+    font-size: 1rem;
+    color: $lightBlue
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    min-height: 100vh;
+    background-color: $blue;
+}
+
+h1 {
+    font-family: $header-font-family;
+    font-size: $header-font-size;
+    color: $lightBlue;
+}
+
+h2 {
+    font-family: $header-font-family;
+    font-size: $subheader-font-size;
+    color: $lightBlue;
+}
+
+.main__inner {
+    padding: 0 10%;
 }

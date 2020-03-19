@@ -8,6 +8,7 @@ const app = express()
 const port = process.env.PORT || 3000;
 
 require("dotenv").config();
+require("./views/helpers");
 
 app
     .use("/", express.static(path.join(__dirname, "public")))

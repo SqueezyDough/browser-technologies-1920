@@ -1,0 +1,41 @@
+.base-form {
+    input {
+        width: 100%;
+        padding: .5rem 1rem .5rem 0;
+        font-size: $body-font-size;
+        color: $lightBlue;
+        transition: all .2s;
+
+        &[type="text"] {
+            border: none;
+            border-bottom: 1px solid $mediumBlue;
+            background-color: transparent;
+
+            &:focus, &:not(:placeholder-shown) {
+                padding: .5rem 1rem;
+            }
+
+            &::placeholder {
+                color: $mediumBlue;
+            }
+        }
+
+        &:focus {
+            outline-color: $red;;
+        }
+    }
+
+    label {
+        display: block;
+    }
+}
+
+.base-form__bottom-actions {
+    position: absolute;
+    bottom: 1rem;
+
+    .btn {
+        display: inline-block;
+        max-width: 50%;
+    }
+}

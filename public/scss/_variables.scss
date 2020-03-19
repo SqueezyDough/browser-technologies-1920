@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Inconsolata";
+    src: url("../fonts/Inconsolata/Inconsolata-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Inconsolata-bold";
+    src: url("../fonts/Inconsolata/Inconsolata-Bold.ttf");
+}
+
+$red: #FF0449;
+$lightBlue: #BEC6D8;
+$mediumBlue: #7E8BA7;
+$blue: #08174A;
+$darkBlue: #040D2C;
+
+$header-font-size: 3.2rem;
+$subheader-font-size: 1.5rem;
+$body-font-size: 1rem;
+
+$header-font-family: 'Inconsolata-bold', monospace;
+$body-font-family: 'Inconsolata', monospace;
