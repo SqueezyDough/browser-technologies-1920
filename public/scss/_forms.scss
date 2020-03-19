@@ -1,12 +1,12 @@
 .base-form {
     input {
         width: 100%;
-        padding: .5rem 1rem .5rem 0;
+        padding: .5rem 1rem;
         font-size: $body-font-size;
-        color: $lightBlue;
         transition: all .2s;
 
         &[type="text"] {
+            padding: .5rem 1rem .5rem 0;
             border: none;
             border-bottom: 1px solid $mediumBlue;
             background-color: transparent;
@@ -32,10 +32,9 @@
 
 .base-form__bottom-actions {
     position: absolute;
-    bottom: 1rem;
+    bottom: 3rem;
 
     .btn {
         display: inline-block;
-        max-width: 50%;
     }
 }
