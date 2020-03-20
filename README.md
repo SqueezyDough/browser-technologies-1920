@@ -24,10 +24,11 @@ This course challenges you to make a survey that is accessible to all users brow
 ------
 
 <a name="Assignment-1.2"></a>
+## Assignment 1.1 & 1.2 - Break your OBA App
+
 <details>
 <summary>Assignment 1.1 & 1.2</summary>
-  
-## Assignment 1.1 & 1.2 - Break your OBA App
+
 ### [Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) summarised
 
 #### `The graceful degradation` VS `The progressive enhancement` perspective
@@ -163,10 +164,10 @@ Fixes:
 </details>
 
 <a name="Assignment-2"></a>
+## Assignment 2
 <details>
 <summary>Assignment 2</summary>
   
-## Assignment 2
 ### Use Case
 I will build a progressive enhanced survey that 'remembers' your answers when you return to the page.
 
