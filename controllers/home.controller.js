@@ -17,12 +17,14 @@ exports.init = (req, res) => {
 exports.startSurveySession = (req, res) => {
     const pin = res.locals.pin
 
-    // store.storeUserProgression(pin)
+    const user = store.storeUserProgression(pin)
+
+    res.locals.user = user
 
     res.redirect(`survey/${pin}`)
 }
 
 exports.survey = (req, res) => {
-    const pin = res.locals.pin;
-    res.render('survey', pin)
+    const user = res.locals.user;
+    res.render('survey', user)
 }
