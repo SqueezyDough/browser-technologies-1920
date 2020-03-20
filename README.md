@@ -5,7 +5,10 @@
 * [Assignment 2](#Assignment-2)
 
 <a name="Assignment-1.2"></a>
-## Assignment 1.2 - Break your OBA App
+<details>
+<summary>Assignment 1.1 & 1.2</summary>
+  
+## Assignment 1.1 & 1.2 - Break your OBA App
 ### [Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) summarised
 
 #### `The graceful degradation` VS `The progressive enhancement` perspective
@@ -138,7 +141,14 @@ Fixes:
 * Make the time interval dynamic. Times between new book selections should vary.
 * Books should be removed from the DOM when eaten.
 
+</details>
+
+------
+
 <a name="Assignment-2"></a>
+<details>
+<summary>Assignment 2</summary>
+  
 ## Assignment 2
 ### Use Case
 I will build a progressive enhanced survey that 'remembers' your answers when you return to the page.
@@ -172,5 +182,7 @@ The app uses local storage to get the return PIN and fetch the user progression 
 #### Browser support
 
 #### Accessibility issues
+</details>
+
 
 
