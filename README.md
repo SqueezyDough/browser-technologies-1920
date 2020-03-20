@@ -4,6 +4,22 @@
 * [Assignment 1.2](#Assignment-1.2)
 * [Assignment 2](#Assignment-2)
 
+## CASE 1: Progressive enhanced survey
+### Introduction
+This course challenges you to make a survey that is accessible to all users browsing the web. To achieve this I've used the [Progessive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) paradigm.
+
+### Installation
+#### Clone repo
+`git clone `
+
+#### Install dependencies
+`npm i`
+
+#### Start application
+`npm run start`
+
+------
+
 <a name="Assignment-1.2"></a>
 <details>
 <summary>Assignment 1.1 & 1.2</summary>
@@ -143,8 +159,6 @@ Fixes:
 
 </details>
 
-------
-
 <a name="Assignment-2"></a>
 <details>
 <summary>Assignment 2</summary>
@@ -157,7 +171,7 @@ I will build a progressive enhanced survey that 'remembers' your answers when yo
 <img width="750" alt="f79cfc3cf42a0365edf40fe83aecb897" src="https://user-images.githubusercontent.com/33430653/76962825-39ee2600-6920-11ea-9637-da659c125273.png">
 
 #### Return PIN
-The return PIN is a identifier to store form progression. The data is stored in a JSON file in local storage and on the server as a fallback.
+The return PIN is a identifier to store form progression.
 
 ##### No storage
 The START page checks whether the user has local storage enables and JS enabled or not. I so it looks for a return pin. The user can provide this is 3 different ways.
@@ -169,12 +183,13 @@ If the user has a return pin in his local storage, it will automatically display
 If the app can't find a return pin in the local storage or either local storage is disabled, the user can still return to his previous session by filling it in the text input or adding it to the url.
 
 #### Functional
-The app uses a progressive disclosed form. The manual return PIN works with HTML and server side rendering.
+The app uses a progressive disclosed form with pagination. Fetching and sending user progression is handled server-side. This means the CORE functionality will always work.
 
 #### Usable
-The app uses local storage to get the return PIN and fetch the user progression from the server.
+The app uses CSS to style the form in a way the user expects. The app uses basic validation using HTML attributes.
 
 #### Pleasurable
+
 
 ### Features
 * Return PIN that will open the form in its previous closed state.
