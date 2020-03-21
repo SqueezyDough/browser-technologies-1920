@@ -26,5 +26,5 @@ exports.startSurveySession = (req, res) => {
 
 exports.survey = (req, res) => {
     const user = res.locals.user;
-    res.render('survey', user)
+    res.render('survey/introduction', user)
 }

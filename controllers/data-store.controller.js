@@ -2,8 +2,9 @@ const fs = require('fs')
 
 // TODO: check if user is in data
 exports.storeUserProgression = (pin, formData) => {
-    const data = readData() || []
-    const user = findUser(pin, data) ? updateUser(user, formData) : createUser(pin, formData)
+    const storagePath = './data/survey-users.json'
+    const data = readData(storagePath) || []
+    const user = findUser(pin, data) ? updateUser(pin, formData) : createUser(pin, formData)
 
     data.push(user)
     setUserProgression(data)
@@ -12,7 +13,7 @@ exports.storeUserProgression = (pin, formData) => {
 }
 
 exports.getUserProgression = pin => {
-    const data = readData()
+    const data = readData('./data/survey-users.json')
     return findUser(pin, data)
 }
 
@@ -25,7 +26,7 @@ function findUser (pin, data) {
     return data.find(users => users.pin === pin)
 }
 
-function updateUser(user) {
+function updateUser(pin, user) {
     return user = {
         pin: pin,
         formData: {
@@ -45,9 +46,9 @@ function createUser(pin, formData) {
     }
 }
 
-function readData() {
+function readData(path) {
     try {
-        return JSON.parse(fs.readFileSync('./data/survey-users.json'))
+        return JSON.parse(fs.readFileSync(path))
     } catch {
         return false
     }

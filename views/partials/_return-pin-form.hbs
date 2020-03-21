@@ -1,11 +1,11 @@
 <form class='main__inner base-form -PIN' method="POST" action="/survey">
-    <label>
+    <label class="base-form__label">
         Return PIN
-        <p>Fill in your return pin to return to your previous session.</p>
-        <input type="text" name="pin" inputmode="numeric" pattern="[0-9]{6}" placeholder="123456">
+        <p class="base-form__hint">Fill in your return pin to return to your previous session.</p>
+        <input class="base-form__input" type="text" name="pin" inputmode="numeric" pattern="[0-9]{6}" placeholder="123456">
     </label>
 
-    <div class='base-form__bottom-actions'>
+    <div class="base-form__bottom-actions">
         {{!-- <input class="btn -secondary" type="submit" value="New survey"> --}}
         <input class="btn -primary" type="submit" value="Start survey">
     </div>

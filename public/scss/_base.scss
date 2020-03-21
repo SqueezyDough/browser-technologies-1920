@@ -1,6 +1,8 @@
 body {
     margin: 0;
-    background-color: $red;
+    background-image: url('../images/cmd_iconen.png');
+    background-blend-mode: multiply;
+    background-color: $darkRed;
     font-family: $body-font-family;
     font-size: 1rem;
     color: $lightBlue
@@ -12,7 +14,12 @@ body {
 
 main {
     min-height: 100vh;
-    background-color: $blue;
+    background-color: $red;
+    color: $darkBlue;
+
+    @media screen and (min-width: 40rem) {
+        max-width: 30rem;
+    }
 }
 
 h1 {
@@ -27,6 +34,9 @@ h2 {
     color: $lightBlue;
 }
 
-.main__inner {
-    padding: 0 10%;
+em {
+    background-color: $yellow;
+    font-family: $contrast-font-family;
+    text-transform: uppercase;
+    font-style: normal;
 }
