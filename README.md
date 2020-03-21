@@ -4,8 +4,31 @@
 * [Assignment 1.2](#Assignment-1.2)
 * [Assignment 2](#Assignment-2)
 
+## FEEDBACK REQUEST
+* Kun je me feedback geven over m'n oplossingen voor de 3 verschillende lagen?
+
+## CASE 1: Progressive enhanced survey
+### Introduction
+This course challenges you to make a survey that is accessible to all users browsing the web. To achieve this I've used the [Progessive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) paradigm.
+
+### Installation
+#### Clone repo
+`git clone `
+
+#### Install dependencies
+`npm i`
+
+#### Start application
+`npm run start`
+
+------
+
 <a name="Assignment-1.2"></a>
-## Assignment 1.2 - Break your OBA App
+## Assignment 1.1 & 1.2 - Break your OBA App
+
+<details>
+<summary>Assignment 1.1 & 1.2</summary>
+
 ### [Understanding progressive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) summarised
 
 #### `The graceful degradation` VS `The progressive enhancement` perspective
@@ -138,8 +161,13 @@ Fixes:
 * Make the time interval dynamic. Times between new book selections should vary.
 * Books should be removed from the DOM when eaten.
 
+</details>
+
 <a name="Assignment-2"></a>
 ## Assignment 2
+<details>
+<summary>Assignment 2</summary>
+  
 ### Use Case
 I will build a progressive enhanced survey that 'remembers' your answers when you return to the page.
 
@@ -147,7 +175,7 @@ I will build a progressive enhanced survey that 'remembers' your answers when yo
 <img width="750" alt="f79cfc3cf42a0365edf40fe83aecb897" src="https://user-images.githubusercontent.com/33430653/76962825-39ee2600-6920-11ea-9637-da659c125273.png">
 
 #### Return PIN
-The return PIN is a identifier to store form progression. The data is stored in a JSON file in local storage and on the server as a fallback.
+The return PIN is a identifier to store form progression.
 
 ##### No storage
 The START page checks whether the user has local storage enables and JS enabled or not. I so it looks for a return pin. The user can provide this is 3 different ways.
@@ -159,18 +187,23 @@ If the user has a return pin in his local storage, it will automatically display
 If the app can't find a return pin in the local storage or either local storage is disabled, the user can still return to his previous session by filling it in the text input or adding it to the url.
 
 #### Functional
-The app uses a progressive disclosed form. The manual return PIN works with HTML and server side rendering.
+The app uses a progressive disclosed form with pagination. Fetching and sending user progression is handled server-side. This means the CORE functionality will always work.
 
 #### Usable
-The app uses local storage to get the return PIN and fetch the user progression from the server.
+##### HTML
+The app uses basic validation using HTML attributes.
+
+##### CSS
+The app uses CSS to style the form in a way the user expects. 
 
 #### Pleasurable
+##### JS
+###### Automatic return PIN
+JS stores the return PIN automatically in local storage when the window / browser is closed. On return it passes the return pin to the server to render the correct page and fill in all the field from the previous session.
 
-### Features
-* Return PIN that will open the form in its previous closed state.
+The progression bar on the bottom of the screen is multidemensional. Page progression is indicated via the number of filled circles. The disclosed form progression is indicated via the amount the circle is filled (from bottom to top)
 
-#### Browser support
+</details>
 
-#### Accessibility issues
 
 
