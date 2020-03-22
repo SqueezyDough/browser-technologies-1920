@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "predev": "npm run build:css",
-    "dev": "nodemon server.js",
-    "start": "node server.js",
+    "dev": "nodemon app.js",
+    "start": "node app.js",
     "prebuild:css": "rimraf ./public/dist",
     "build:css": "gulp sass",
     "watch:css": "gulp watch"
