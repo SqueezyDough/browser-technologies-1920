@@ -1,11 +1,14 @@
 body {
     margin: 0;
-    background-image: url('../images/cmd_iconen.png');
-    background-blend-mode: multiply;
     background-color: $darkRed;
     font-family: $body-font-family;
     font-size: 1rem;
-    color: $lightBlue
+    color: $lightBlue;
+
+    @supports (mix-blend-mode: screen) {
+        background-image: url('../images/cmd_iconen.png');
+        background-blend-mode: multiply;
+    }
 }
 
 * {
@@ -16,10 +19,11 @@ main {
     min-height: 100vh;
     max-height: 100vh;
     overflow-y: auto;
+    box-shadow: 2px 3px 4px 0 #00000020;
     background-color: $red;
     color: $darkBlue;
 
-    @media screen and (min-width: 40rem) {
+    @media screen and (min-width: 30rem) {
         max-width: 30rem;
     }
 }

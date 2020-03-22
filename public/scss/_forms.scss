@@ -148,7 +148,6 @@ input[type="text"] {
 .progression-bar {
     position: absolute;
     bottom: 0;
-    padding: .3rem 8%;
     width: 100%;
     max-width: 30rem;
     background-color: $darkRed;
@@ -156,6 +155,7 @@ input[type="text"] {
 }
 
 .progression-bar__pin {
+    padding: .3rem 8%;
     text-transform: uppercase;
     font-family: $contrast-font-family;
 }

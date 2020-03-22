@@ -16,12 +16,14 @@
 
 body {
   margin: 0;
-  background-image: url("../images/cmd_iconen.png");
-  background-blend-mode: multiply;
   background-color: #C60036;
   font-family: "Avenir-Roman", sans-serif;
   font-size: 1rem;
   color: #BEC6D8; }
+  @supports (mix-blend-mode: screen) {
+    body {
+      background-image: url("../images/cmd_iconen.png");
+      background-blend-mode: multiply; } }
 
 * {
   box-sizing: border-box; }
@@ -30,9 +32,10 @@ main {
   min-height: 100vh;
   max-height: 100vh;
   overflow-y: auto;
+  box-shadow: 2px 3px 4px 0 #00000020;
   background-color: #FF0449;
   color: #040D2C; }
-  @media screen and (min-width: 40rem) {
+  @media screen and (min-width: 30rem) {
     main {
       max-width: 30rem; } }
 
@@ -192,12 +195,12 @@ input[type="text"] {
 .progression-bar {
   position: absolute;
   bottom: 0;
-  padding: .3rem 8%;
   width: 100%;
   max-width: 30rem;
   background-color: #C60036;
   color: #040D2C; }
 
 .progression-bar__pin {
+  padding: .3rem 8%;
   text-transform: uppercase;
   font-family: "Inconsolata-bold", monospace; }
