@@ -14,7 +14,7 @@ require("./views/helpers");
 app
     .use(bodyParser.urlencoded({ extended: false }))
     .use(bodyParser.json())
-    .use("/", express.static(path.join(__dirname, "public")))
+    .use("/", express.static(path.join(__dirname, "/public")))
     .set('view engine', 'hbs')
     .engine('hbs', exphbs({
         extname: '.hbs',
