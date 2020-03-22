@@ -16,11 +16,12 @@
 
 body {
   margin: 0;
+  overflow-y: hidden;
   background-color: #C60036;
   font-family: "Avenir-Roman", sans-serif;
   font-size: 1rem;
   color: #BEC6D8; }
-  @supports (mix-blend-mode: screen) {
+  @supports (mix-blend-mode: multiply) {
     body {
       background-image: url("../images/cmd_iconen.png");
       background-blend-mode: multiply; } }
@@ -87,6 +88,7 @@ em {
   text-transform: uppercase; }
 
 input[type="text"] {
+  display: block;
   width: 100%; }
 
 .form-header {
@@ -106,7 +108,7 @@ input[type="text"] {
 
 .base-form {
   position: relative;
-  padding: 3rem 8%; }
+  padding: 3rem 8% 7rem; }
 
 .base-form__fieldset {
   padding: 0;
@@ -194,13 +196,26 @@ input[type="text"] {
 
 .progression-bar {
   position: absolute;
-  bottom: 0;
+  bottom: -4rem;
   width: 100%;
+  padding: .3rem 0;
   max-width: 30rem;
-  background-color: #C60036;
-  color: #040D2C; }
+  background-color: #EFD609;
+  color: #040D2C;
+  transition: all .2s; }
+  .progression-bar:hover {
+    bottom: 0rem;
+    height: calc(initial + 3rem); }
+  @media screen and (min-width: 21em) {
+    .progression-bar {
+      bottom: -3rem; } }
 
 .progression-bar__pin {
-  padding: .3rem 8%;
+  padding: 0 8%;
   text-transform: uppercase;
   font-family: "Inconsolata-bold", monospace; }
+
+.return-pin-hint {
+  display: block;
+  margin-top: .5rem;
+  padding: 0 8%; }

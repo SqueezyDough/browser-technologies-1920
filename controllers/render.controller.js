@@ -7,7 +7,7 @@ exports.renderView = function(req, res, viewName) {
         userString: userStringified
     }
 
-    console.log('render: ', viewName, viewData)
+    // console.log('render: ', viewName, viewData)
 
     viewData.title = `${process.env.NAME} - ${viewName}`
     res.render(viewName, viewData)

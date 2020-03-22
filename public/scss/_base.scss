@@ -1,11 +1,12 @@
 body {
     margin: 0;
+    overflow-y: hidden;
     background-color: $darkRed;
     font-family: $body-font-family;
     font-size: 1rem;
     color: $lightBlue;
 
-    @supports (mix-blend-mode: screen) {
+    @supports (mix-blend-mode: multiply) {
         background-image: url('../images/cmd_iconen.png');
         background-blend-mode: multiply;
     }

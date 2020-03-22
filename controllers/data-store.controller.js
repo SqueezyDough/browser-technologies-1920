@@ -18,19 +18,20 @@ exports.getUserProgression = pin => {
 }
 
 exports.updateUserProgression = (user, formData) => {
-    const updatedUser = user.formData.push(formData)
-    mergeDataCollection(updatedUser)
+    const storagePath = './data/survey-users.json'
+
+    user.forms.push(formData)
+
+    mergeDataCollection(user, storagePath)
 }
 
-function mergeDataCollection(changedUser) {
-    const data = readData()
-    const otherUsers = data.filter(user => {
-        return user.pin !== changedUser.pin
-    })
+function mergeDataCollection(changedUser, path) {
+    const data = readData(path)
+    const updatedData = data.filter(user => user.pin !== changedUser.pin)
 
-    const mergedUsers = otherUsers.push(changedUser)
+    updatedData.push(changedUser)
 
-    setUserProgression(mergedUsers)
+    setUserProgression(updatedData)
 }
 
 function setUserProgression(data) {
@@ -45,14 +46,14 @@ function findUser (pin, data) {
 function updateUser(pin, user) {
     return user = {
         pin: pin,
-        formData: []
+        forms: []
     }
 }
 
 function createUser(pin, formData) {
     return user = {
         pin: pin,
-        formData: []
+        forms: []
     }
 }
 
