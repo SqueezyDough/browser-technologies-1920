@@ -4,13 +4,15 @@
 </header>
 
 <form class="base-form">
+    <input type="hidden" name="progressionTracker" value="{{userString}}">
+
     <fieldset class="base-form__fieldset">
         <legend class="base-form__legend">Mute <em>OR</em> Mic?</legend>
 
-        <input id="mute/mic_radio_1" class="base-form__input -radio" type="radio" name="survey-mic-mute" value="COD Warzone">
+        <input id="mute/mic_radio_1" class="base-form__input -radio" type="radio" name="survey-mic-mute" value="Mute">
         <label for="mute/mic_radio_1" class="base-form__label radio-label">Mute</label>
 
-        <input id="mute/mic_radio_2" class="base-form__input -radio" type="radio" name="survey-mic-mute" value="Clash of Clans">
+        <input id="mute/mic_radio_2" class="base-form__input -radio" type="radio" name="survey-mic-mute" value="Mic">
         <label for="mute/mic_radio_2" class="base-form__label radio-label">Mic</label>
     </fieldset>
 
@@ -24,10 +26,17 @@
         <label for="games_radio_2" class="base-form__label radio-label">Clash of Clans</label>
     </fieldset>
 
-    <div class='base-form__bottom-actions '>
+     <fieldset class="base-form__fieldset">
+        <label class="base-form__label -input">
+            Where did you finish during <em>Koop's</em> Clown Fiësta Kahoot quiz?
+            <input class="base-form__input -number" type="text" name="pin" inputmode="numeric" pattern="[0-9]{6}" placeholder="35">
+        </label>
+    </fieldset>
+
+    <div class='base-form__submit'>
         <input class="btn -secondary" type="submit" value="Previous">
         <input class="btn -primary" type="submit" value="Next step">
     </div>
 </form>
 
-{{user.pin}}
+{{> _progression-bar}}

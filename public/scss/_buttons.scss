@@ -7,9 +7,10 @@
     cursor: pointer;
 
     &:hover {
-        transform: scaleY(1.4);
+        flex-grow: 1;
+        transform: scaleY(1.1);
         background-color: $yellow;
-        border: 1px solid $darkBlue;
+        border: 2px solid $darkBlue;
         color: $darkBlue;
     }
 }
@@ -17,6 +18,7 @@
 .-primary {
     @extend .btn;
 
+    flex-grow: 1;
     border-top: 1px solid $darkBlue;
     border-right: 1px solid $red;
     border-bottom: 1px solid $red;

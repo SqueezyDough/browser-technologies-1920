@@ -1,0 +1,15 @@
+<form class='main__inner base-form' method="POST" action="/survey">
+    <fieldset class="base-form__fieldset">
+        <legend class="base-form__legend -enlarge">
+            Return PIN
+            <p class="base-form__hint">Fill in your return pin to return to your previous session <em>or</em> start a new one.</p>
+
+            <input class="base-form__input -number" type="text" name="pin" inputmode="numeric" pattern="[0-9]{6}" placeholder="123456">
+        </legend>
+    </fieldset>
+
+    <div class="base-form__submit">
+        {{!-- <input class="btn -secondary" type="submit" value="New survey"> --}}
+        <input class="btn -primary" type="submit" value="Start survey">
+    </div>
+</form>

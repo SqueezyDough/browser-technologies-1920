@@ -2,11 +2,13 @@ i want to be anonymous
 YOLO, my name is []
 
 <header class='form-header'>
-    <h1>Web lectures</h1>
-    <h2>Survey</h2>
+    <h1>Hi,</h1>
+    <h2>Please introduce yourself.</h2>
 </header>
 
-<form class="base-form">
+<form class="base-form" method="POST", action="/survey/booting-up">
+    <input type="hidden" name="progressionTracker" value="{{userString}}">
+
     <fieldset class="base-form__fieldset">
         <legend class="base-form__legend">Mute <em>OR</em> Mic?</legend>
 
@@ -27,10 +29,10 @@ YOLO, my name is []
         <label for="games_radio_2" class="base-form__label radio-label">Clash of Clans</label>
     </fieldset>
 
-    <div class='base-form__bottom-actions '>
-        <input class="btn -secondary" type="submit" value="Previous">
+    <div class='base-form__submit '>
+        {{!-- <input class="btn -secondary" type="submit" value="Previous"> --}}
         <input class="btn -primary" type="submit" value="Next step">
     </div>
 </form>
 
-{{user.pin}}
+{{> _progression-bar}}

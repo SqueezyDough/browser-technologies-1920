@@ -3,25 +3,47 @@ input[type="text"] {
 }
 
 .form-header {
+    position: relative;
     padding: 4rem 0;
     background-color: $blue;
 
     h1, h2 {
         margin: 0;
     }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100px;
+        height: 25px;
+        background-color: $red;
+    }
 }
 
 .base-form {
     position: relative;
-    padding: 3rem 10%;
+    padding: 3rem 8%;
 }
 
 .base-form__fieldset {
+    padding: 0;
     margin-bottom: 2rem;
     border: none;
+
+    .-enlarge {
+        font-size: 36px;
+
+        p {
+            font-size: $subheader-font-size;
+            font-family: $body-font-family;
+        }
+    }
 }
 
 .base-form__legend {
+    padding: 0;
     font-family: $header-font-family;
     font-size: $subheader-font-size;
 }
@@ -30,6 +52,10 @@ input[type="text"] {
     display: block;
     margin: 1rem 0;
     font-family: $header-font-family;
+
+    &.-input {
+        font-size: $subheader-font-size;
+    }
 }
 
 .base-form__hint {
@@ -43,21 +69,25 @@ input[type="text"] {
 
     &[type="text"] {
         padding: .5rem 1rem .5rem 0;
+        margin: 1rem 0;
         border: none;
         border-bottom: 1px solid $darkBlue;
         border-right: 1px solid $darkBlue;
         background-color: transparent;
+        box-shadow: $darkBlue 4px 4px 0 0;
         font-family: $header-font-family;
         color: $darkBlue;
 
-        &:focus, &:not(:placeholder-shown) {
+        &:focus, &:hover, &:not(:placeholder-shown) {
             padding: .5rem 1rem;
-            border-color: $red;
-            box-shadow: $darkBlue 4px 4px 0 0;
         }
 
         &::placeholder {
             color: $darkRed;
+        }
+
+        &.-number {
+            max-width: 100px;
         }
     }
 
@@ -90,7 +120,7 @@ input[type="text"] {
     }
 }
 
-.base-form__bottom-actions {
+.base-form__submit{
     margin-top: 3rem;
 
     @supports (display: flex) {
@@ -113,4 +143,19 @@ input[type="text"] {
             width: initial;
         }
     }
+}
+
+.progression-bar {
+    position: absolute;
+    bottom: 0;
+    padding: .3rem 8%;
+    width: 100%;
+    max-width: 30rem;
+    background-color: $darkRed;
+    color: $darkBlue;
+}
+
+.progression-bar__pin {
+    text-transform: uppercase;
+    font-family: $contrast-font-family;
 }

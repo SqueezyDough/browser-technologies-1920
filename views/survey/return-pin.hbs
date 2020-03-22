@@ -1,0 +1,19 @@
+<header class='form-header'>
+    <h1>Return PIN</h1>
+    <h2>Restore your session</h2>
+</header>
+
+<form class="base-form" method="POST", action="/survey/booting-up">
+    <fieldset class="base-form__fieldset">
+        <legend class="base-form__legend -enlarge">Complete this survey at any time.
+            <p>Just save <em>{{user.pin}}</em> to complete your survey at a later date.  </p>
+        </legend>
+
+        <input type="hidden" name="progressionTracker" value="{{userString}}">
+    </fieldset>
+
+    <div class='base-form__submit '>
+        {{!-- <input class="btn -secondary" type="submit" value="Previous"> --}}
+        <input class="btn -primary" type="submit" value="Gotcha">
+    </div>
+</form>
