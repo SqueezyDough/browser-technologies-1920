@@ -6,25 +6,33 @@
 <form class="base-form" method="POST" action="/survey/web-lectures">
     <input type="hidden" name="progressionTracker" value="{{userString}}">
 
-    <fieldset class="base-form__fieldset">
-        <legend class="base-form__legend">Mute <em>OR</em> Mic?</legend>
-
-        <input id="mute/mic_radio_1" class="base-form__input -radio" type="radio" name="survey-mic-mute" value="COD Warzone">
-        <label for="mute/mic_radio_1" class="base-form__label radio-label">Mute</label>
-
-        <input id="mute/mic_radio_2" class="base-form__input -radio" type="radio" name="survey-mic-mute" value="Clash of Clans">
-        <label for="mute/mic_radio_2" class="base-form__label radio-label">Mic</label>
-    </fieldset>
+    <label class="base-form__label -input">
+        What is your <em>username</em>?
+        <input class="base-form__input" type="text" name="username" placeholder="Kroko Dino">
+    </label>
 
     <fieldset class="base-form__fieldset">
-        <legend class="base-form__legend">Which game are you playing <em>during</em> the web lectures?</legend>
+        <legend class="base-form__legend">Select your <em>gender</em></legend>
 
-        <input id="games_radio_1" class="base-form__input -radio" type="radio" name="survey-game" value="COD Warzone">
-        <label for="games_radio_1" class="base-form__label radio-label">COD Warzone</label>
+        <input id="gender_radio_1" class="base-form__input -radio" type="radio" name="gender" value="Male">
+        <label for="gender_radio_1" class="base-form__label radio-label">Male</label>
 
-        <input id="games_radio_2" class="base-form__input -radio" type="radio" name="survey-game" value="Clash of Clans">
-        <label for="games_radio_2" class="base-form__label radio-label">Clash of Clans</label>
+        <input id="gender_radio_2" class="base-form__input -radio" type="radio" name="gender" value="Female">
+        <label for="gender_radio_2" class="base-form__label radio-label">Female</label>
+
+        <input id="gender_radio_3" class="base-form__input -radio" type="radio" name="gender" value="Vacuum-cleaner">
+        <label for="gender_radio_3" class="base-form__label radio-label">Vacuüm cleaner</label>
     </fieldset>
+
+    <label class="base-form__label -input">
+        What is your <em>age</em>?
+        <input class="base-form__input -number" type="text" name="age" inputmode="numeric" placeholder="21">
+    </label>
+
+    <label class="base-form__label -input">
+        Which <em>major</em> program are you following?
+        <input class="base-form__input" type="text" name="username" placeholder="Communications & Multimedia design">
+    </label>
 
     <div class='base-form__submit'>
         <input class="btn -secondary" type="submit" value="Previous">

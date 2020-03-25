@@ -56,6 +56,14 @@ em {
   text-transform: uppercase;
   font-style: normal; }
 
+::selection {
+  background-color: #EFD609; }
+
+.visibility-hidden {
+  display: block;
+  overflow: hidden;
+  height: 0; }
+
 .btn, .-primary, .-secondary {
   padding: .5rem 1.5rem;
   font-family: "Inconsolata-bold", monospace;
@@ -108,14 +116,15 @@ input[type="text"] {
 
 .base-form {
   position: relative;
-  padding: 3rem 8% 7rem; }
+  padding: 3rem 8% 4rem; }
 
 .base-form__fieldset {
   padding: 0;
   margin-bottom: 2rem;
   border: none; }
   .base-form__fieldset .-enlarge {
-    font-size: 36px; }
+    font-size: 36px;
+    margin-bottom: 4rem; }
     .base-form__fieldset .-enlarge p {
       font-size: 1.5rem;
       font-family: "Avenir-Roman", sans-serif; }
@@ -130,7 +139,8 @@ input[type="text"] {
   margin: 1rem 0;
   font-family: "Avenir-Heavy", sans-serif; }
   .base-form__label.-input {
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    margin-bottom: 3rem; }
 
 .base-form__hint {
   font-family: "Avenir-Roman", sans-serif; }
@@ -176,8 +186,33 @@ input[type="text"] {
     background-color: #EFD609;
     border: 4px solid #040D2C; }
 
+.-slider {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-top: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border-bottom: 1px solid #040D2C;
+  border-right: 1px solid #040D2C;
+  box-shadow: #040D2C 4px 4px 0 0;
+  outline: 0;
+  transition: opacity .2s; }
+  .-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background-color: #EFD609;
+    box-shadow: #040D2C 4px 4px 0 0;
+    cursor: pointer; }
+    .-slider::-webkit-slider-thumb:hover {
+      width: 30px;
+      height: 30px; }
+
 .base-form__submit {
-  margin-top: 3rem; }
+  margin-top: 5rem; }
   @supports (display: flex) {
     .base-form__submit {
       display: flex;
@@ -196,26 +231,16 @@ input[type="text"] {
 
 .progression-bar {
   position: absolute;
-  bottom: -4rem;
+  bottom: 0;
+  left: 0;
   width: 100%;
   padding: .3rem 0;
   max-width: 30rem;
   background-color: #EFD609;
   color: #040D2C;
   transition: all .2s; }
-  .progression-bar:hover {
-    bottom: 0rem;
-    height: calc(initial + 3rem); }
-  @media screen and (min-width: 21em) {
-    .progression-bar {
-      bottom: -3rem; } }
 
 .progression-bar__pin {
   padding: 0 8%;
   text-transform: uppercase;
   font-family: "Inconsolata-bold", monospace; }
-
-.return-pin-hint {
-  display: block;
-  margin-top: .5rem;
-  padding: 0 8%; }

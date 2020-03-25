@@ -21,12 +21,11 @@ exports.returnPin = (req, res) => {
 }
 
 exports.bootingUp = (req, res) => {
-    const user = JSON.parse(req.body.progressionTracker)
     const path = 'survey/booting-up'
+    const processedData = processFormData(req.body, path)
+    const user = JSON.parse(req.body.progressionTracker)
 
-    // updateUserProgression(user)
-
-
+    store.updateUserProgression(user, processedData)
     render.renderView(req, res, path)
 }
 
@@ -36,9 +35,6 @@ exports.webLectures = (req, res) => {
     const user = JSON.parse(req.body.progressionTracker)
 
     store.updateUserProgression(user, processedData)
-
-    console.log('processed data: ', processedData)
-
     render.renderView(req, res, path)
 }
 

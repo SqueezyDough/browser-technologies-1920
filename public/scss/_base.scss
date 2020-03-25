@@ -47,3 +47,13 @@ em {
     text-transform: uppercase;
     font-style: normal;
 }
+
+::selection {
+    background-color: $yellow;
+}
+
+.visibility-hidden {
+    display: block;
+    overflow: hidden;
+    height: 0;
+}

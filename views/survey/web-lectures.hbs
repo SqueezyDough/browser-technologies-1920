@@ -7,6 +7,19 @@
     <input type="hidden" name="progressionTracker" value="{{userString}}">
 
     <fieldset class="base-form__fieldset">
+        <legend class="base-form__legend"> At what <em>time</em> do you get out of bed?</legend>
+
+        <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="get-up" value="7AM">
+        <label for="get-up_radio_1" class="base-form__label radio-label">7AM <em>early bird</em></label>
+
+        <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="get-up" value="9AM">
+        <label for="get-up_radio_1" class="base-form__label radio-label">9AM <em>just in time</em></label>
+
+        <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="get-up" value="1PM">
+        <label for="get-up_radio_1" class="base-form__label radio-label">1PM <em>wait for code reviews</em></label>
+    </fieldset>
+
+    <fieldset class="base-form__fieldset">
         <legend class="base-form__legend">Mute <em>OR</em> Mic?</legend>
 
         <input id="mute/mic_radio_1" class="base-form__input -radio" type="radio" name="survey-mic-mute" value="Mute">
@@ -26,12 +39,25 @@
         <label for="games_radio_2" class="base-form__label radio-label">Clash of Clans</label>
     </fieldset>
 
-     <fieldset class="base-form__fieldset">
-        <label class="base-form__label -input">
-            Where did you finish during <em>Koop's</em> Clown Fiësta Kahoot quiz?
-            <input class="base-form__input -number" type="text" name="pin" inputmode="numeric" pattern="[0-9]{6}" placeholder="35">
-        </label>
+    <label class="base-form__label -input">
+        Where did you finish during Koop's <em>Clown Fiësta</em> Kahoot quiz?
+        <input class="base-form__input -number" type="text" name="pin" inputmode="numeric" pattern="[0-9]{6}" placeholder="35">
+    </label>
+
+    <fieldset class="base-form__fieldset">
+        <legend class="base-form__legend"> Dou you prefer web lectures <em>or</em> physical lectures?</legend>
+
+        <input id="lecture_type_radio_1" class="base-form__input -radio" type="radio" name="lecture-type" value="Web lectures">
+        <label for="lecture_type_radio_1" class="base-form__label radio-label">Web lectures</label>
+
+        <input id="lecture_type_radio_2" class="base-form__input -radio" type="radio" name="lecture-type" value="Physical lectures">
+        <label for="lecture_type_radio_2" class="base-form__label radio-label">Physical lectures</label>
     </fieldset>
+
+    <label class="base-form__label -input">
+        How would you <em>rate</em> our web lectures? (0 - 10)
+        <input class="base-form__input -slider" type="range" name="rate" value="5" min="0" max="10">
+    </label>
 
     <div class='base-form__submit'>
         <input class="btn -secondary" type="submit" value="Previous">
