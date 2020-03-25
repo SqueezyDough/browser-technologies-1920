@@ -7,5 +7,6 @@ router.get('/', survey.init)
 router.post('/survey', utils.validatePIN, survey.returnPin)
 router.post('/survey/booting-up', survey.bootingUp)
 router.post('/survey/web-lectures', survey.webLectures)
+router.post('/survey/results', survey.results)
 
 module.exports = router

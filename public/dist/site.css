@@ -244,3 +244,13 @@ input[type="text"] {
   padding: 0 8%;
   text-transform: uppercase;
   font-family: "Inconsolata-bold", monospace; }
+
+.results {
+  padding: 3rem 8% 4rem; }
+
+.results__list {
+  list-style-type: none; }
+
+.results__list__page {
+  font-size: 1.5rem;
+  color: #040D2C; }

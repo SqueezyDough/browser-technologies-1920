@@ -3,7 +3,7 @@
     <h2>Survey</h2>
 </header>
 
-<form class="base-form">
+<form class="base-form" method="POST" action="/survey/results">
     <input type="hidden" name="progressionTracker" value="{{userString}}">
 
     <fieldset class="base-form__fieldset">
@@ -12,11 +12,11 @@
         <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="get-up" value="7AM">
         <label for="get-up_radio_1" class="base-form__label radio-label">7AM <em>early bird</em></label>
 
-        <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="get-up" value="9AM">
-        <label for="get-up_radio_1" class="base-form__label radio-label">9AM <em>just in time</em></label>
+        <input id="get-up_radio_2" class="base-form__input -radio" type="radio" name="get-up" value="9AM">
+        <label for="get-up_radio_2" class="base-form__label radio-label">9AM <em>just in time</em></label>
 
-        <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="get-up" value="1PM">
-        <label for="get-up_radio_1" class="base-form__label radio-label">1PM <em>wait for code reviews</em></label>
+        <input id="get-up_radio_3" class="base-form__input -radio" type="radio" name="get-up" value="1PM">
+        <label for="get-up_radio_3" class="base-form__label radio-label">1PM <em>wait for code reviews</em></label>
     </fieldset>
 
     <fieldset class="base-form__fieldset">
@@ -41,7 +41,7 @@
 
     <label class="base-form__label -input">
         Where did you finish during Koop's <em>Clown Fiësta</em> Kahoot quiz?
-        <input class="base-form__input -number" type="text" name="pin" inputmode="numeric" pattern="[0-9]{6}" placeholder="35">
+        <input class="base-form__input -number" type="text" name="pin" inputmode="numeric" pattern="[0-50]{2}" placeholder="35">
     </label>
 
     <fieldset class="base-form__fieldset">

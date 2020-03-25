@@ -21,21 +21,28 @@ exports.returnPin = (req, res) => {
 }
 
 exports.bootingUp = (req, res) => {
-    const path = 'survey/booting-up'
-    const processedData = processFormData(req.body, path)
-    const user = JSON.parse(req.body.progressionTracker)
-
-    store.updateUserProgression(user, processedData)
-    render.renderView(req, res, path)
+    const nextPath = 'survey/booting-up'
+    render.renderView(req, res, nextPath)
 }
 
 exports.webLectures = (req, res) => {
-    const path = 'survey/web-lectures'
-    const processedData = processFormData(req.body, path)
+    const nextPath = 'survey/web-lectures'
+    const prevPath =  'survey/booting-up'
+    const processedData = processFormData(req.body, prevPath)
     const user = JSON.parse(req.body.progressionTracker)
 
     store.updateUserProgression(user, processedData)
-    render.renderView(req, res, path)
+    render.renderView(req, res, nextPath)
+}
+
+exports.results = (req, res) => {
+    const nextPath = 'survey/results'
+    const prevPath =  'survey/web-lectures'
+    const processedData = processFormData(req.body, prevPath)
+    const user = JSON.parse(req.body.progressionTracker)
+
+    store.updateUserProgression(user, processedData)
+    render.renderView(req, res, nextPath)
 }
 
 function processFormData(rawData, path) {
