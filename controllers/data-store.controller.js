@@ -23,6 +23,8 @@ exports.updateUserProgression = (user, formData) => {
     user.forms.push(formData)
 
     mergeDataCollection(user, storagePath)
+
+    return user
 }
 
 function mergeDataCollection(changedUser, path) {

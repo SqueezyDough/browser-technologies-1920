@@ -212,10 +212,10 @@ input[type="text"] {
     height: 25px;
     background-color: #EFD609;
     box-shadow: #040D2C 4px 4px 0 0;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: height .2s; }
     .-slider::-webkit-slider-thumb:hover {
-      width: 30px;
-      height: 30px; }
+      height: 40px; }
 
 .base-form__submit {
   margin-top: 5rem; }

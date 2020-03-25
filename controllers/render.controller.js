@@ -1,13 +1,9 @@
-exports.renderView = function(req, res, viewName) {
-    const userJson = JSON.parse(req.body.progressionTracker)
-    const userStringified = JSON.stringify(userJson)
+exports.renderView = function(req, res, viewName, formData) {
+    const viewData = {}
 
-    console.log(userJson)
+    formData ? viewData.user = formData : viewData.user = JSON.parse(req.body.progressionTracker)
 
-    const viewData = {
-        user: userJson,
-        userString: userStringified
-    }
+    viewData.userString = JSON.stringify(viewData.user)
 
     viewData.title = `${process.env.NAME} - ${viewName}`
     res.render(viewName, viewData)

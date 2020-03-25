@@ -28,21 +28,29 @@ exports.bootingUp = (req, res) => {
 exports.webLectures = (req, res) => {
     const nextPath = 'survey/web-lectures'
     const prevPath =  'survey/booting-up'
-    const processedData = processFormData(req.body, prevPath)
-    const user = JSON.parse(req.body.progressionTracker)
+    const formData = handleForm(req, prevPath)
 
-    store.updateUserProgression(user, processedData)
-    render.renderView(req, res, nextPath)
+    console.log('formData', formData)
+
+    // render view
+    render.renderView(req, res, nextPath, formData)
 }
 
-exports.results = (req, res) => {
-    const nextPath = 'survey/results'
+exports.overview = (req, res) => {
+    // paths
+    const nextPath = 'survey/overview'
     const prevPath =  'survey/web-lectures'
-    const processedData = processFormData(req.body, prevPath)
-    const user = JSON.parse(req.body.progressionTracker)
+    const formData = handleForm(req, prevPath)
 
-    store.updateUserProgression(user, processedData)
-    render.renderView(req, res, nextPath)
+    render.renderView(req, res, nextPath, formData)
+}
+
+function handleForm(req, prevPath) {
+    const processedData = processFormData(req.body, prevPath)
+    const progression = JSON.parse(req.body.progressionTracker)
+    const updatedUser = store.updateUserProgression(progression, processedData)
+
+    return updatedUser
 }
 
 function processFormData(rawData, path) {
