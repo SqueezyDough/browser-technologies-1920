@@ -36,6 +36,10 @@ main {
   box-shadow: 2px 3px 4px 0 #00000020;
   background-color: #FF0449;
   color: #040D2C; }
+  main > section, main form {
+    position: relative;
+    background-color: #FF0449;
+    z-index: 1; }
   @media screen and (min-width: 30rem) {
     main {
       max-width: 30rem; } }
@@ -109,10 +113,12 @@ input[type="text"] {
     content: '';
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -.1rem;
     width: 100px;
     height: 25px;
-    background-color: #FF0449; }
+    background-color: #FF0449;
+    box-shadow: #040D2C 8px 3px 0 0;
+    z-index: 0; }
 
 .base-form {
   position: relative;

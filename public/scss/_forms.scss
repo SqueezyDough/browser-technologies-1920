@@ -16,10 +16,12 @@ input[type="text"] {
         content: '';
         display: block;
         position: absolute;
-        bottom: 0;
+        bottom: -.1rem;
         width: 100px;
         height: 25px;
         background-color: $red;
+        box-shadow: $darkBlue 8px 3px 0 0;
+        z-index: 0;
     }
 }
 

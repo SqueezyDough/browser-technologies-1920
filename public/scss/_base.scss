@@ -24,6 +24,12 @@ main {
     background-color: $red;
     color: $darkBlue;
 
+    > section, form {
+        position: relative;
+        background-color: $red;
+        z-index: 1;
+    }
+
     @media screen and (min-width: 30rem) {
         max-width: 30rem;
     }
