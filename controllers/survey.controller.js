@@ -54,8 +54,12 @@ function handleForm(req, prevPath) {
 }
 
 function processFormData(rawData, path) {
+    const splittedPath = path.split('/')
+    const pathName = splittedPath[splittedPath.length -1].replace('-', ' ')
+
     const data = {
         path: path,
+        pathName: pathName,
         formData: Object.assign({}, rawData)
     }
 

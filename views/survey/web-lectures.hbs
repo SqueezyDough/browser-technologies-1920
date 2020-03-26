@@ -1,5 +1,5 @@
 <header class='form-header'>
-    <h1>Web lectures</h1>
+    <h1>Validating [web lectures]</h1>
     <h2>Survey</h2>
 </header>
 
@@ -7,60 +7,68 @@
     <input type="hidden" name="progressionTracker" value="{{userString}}">
 
     <fieldset class="base-form__fieldset">
-        <legend class="base-form__legend"> At what <em>time</em> do you get out of bed?</legend>
+        <legend class="base-form__legend">At what <em>time</em> do you get out of bed?</legend>
 
-        <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="get-up" value="7AM">
+        <input id="get-up_radio_0" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="" checked="checked">
+
+        <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="7AM">
         <label for="get-up_radio_1" class="base-form__label radio-label">7AM <em>early bird</em></label>
 
-        <input id="get-up_radio_2" class="base-form__input -radio" type="radio" name="get-up" value="9AM">
+        <input id="get-up_radio_2" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="9AM">
         <label for="get-up_radio_2" class="base-form__label radio-label">9AM <em>just in time</em></label>
 
-        <input id="get-up_radio_3" class="base-form__input -radio" type="radio" name="get-up" value="1PM">
+        <input id="get-up_radio_3" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="1PM">
         <label for="get-up_radio_3" class="base-form__label radio-label">1PM <em>wait for code reviews</em></label>
     </fieldset>
 
     <fieldset class="base-form__fieldset">
-        <legend class="base-form__legend">Mute <em>OR</em> Mic?</legend>
+        <legend class="base-form__legend">Mute <em>or</em> Mic?</legend>
 
-        <input id="mute/mic_radio_1" class="base-form__input -radio" type="radio" name="survey-mic-mute" value="Mute">
+        <input id="mute/mic_radio_0" class="base-form__input -radio" type="radio" name="Mute or Mic?" value="" checked="checked">
+
+        <input id="mute/mic_radio_1" class="base-form__input -radio" type="radio" name="Mute or Mic?" value="Mute">
         <label for="mute/mic_radio_1" class="base-form__label radio-label">Mute</label>
 
-        <input id="mute/mic_radio_2" class="base-form__input -radio" type="radio" name="survey-mic-mute" value="Mic">
+        <input id="mute/mic_radio_2" class="base-form__input -radio" type="radio" name="Mute or Mic?" value="Mic">
         <label for="mute/mic_radio_2" class="base-form__label radio-label">Mic</label>
     </fieldset>
 
     <fieldset class="base-form__fieldset">
         <legend class="base-form__legend">Which game are you playing <em>during</em> the web lectures?</legend>
 
-        <input id="games_radio_1" class="base-form__input -radio" type="radio" name="survey-game" value="COD Warzone">
+        <input id="games_radio_0" class="base-form__input -radio" type="radio" name="Which game are you playing during the web lectures?" value="" checked="checked">
+
+        <input id="games_radio_1" class="base-form__input -radio" type="radio" name="Which game are you playing during the web lectures?" value="COD Warzone">
         <label for="games_radio_1" class="base-form__label radio-label">COD Warzone</label>
 
-        <input id="games_radio_2" class="base-form__input -radio" type="radio" name="survey-game" value="Clash of Clans">
+        <input id="games_radio_2" class="base-form__input -radio" type="radio" name="Which game are you playing during the web lectures?" value="Clash of Clans">
         <label for="games_radio_2" class="base-form__label radio-label">Clash of Clans</label>
     </fieldset>
 
     <label class="base-form__label -input">
         Where did you finish during Koop's <em>Clown Fiësta</em> Kahoot quiz?
-        <input class="base-form__input -number" type="text" name="pin" inputmode="numeric" pattern="[0-50]{2}" placeholder="35">
+        <input class="base-form__input -number" type="text" name="Where did you finish during Koop's Clown Fiësta Kahoot quiz?" inputmode="numeric" pattern="[0-50]{2}" placeholder="35">
     </label>
 
     <fieldset class="base-form__fieldset">
-        <legend class="base-form__legend"> Dou you prefer web lectures <em>or</em> physical lectures?</legend>
+        <legend class="base-form__legend">Dou you prefer web lectures <em>or</em> physical lectures?</legend>
 
-        <input id="lecture_type_radio_1" class="base-form__input -radio" type="radio" name="lecture-type" value="Web lectures">
+        <input id="lecture_type_radio_0" class="base-form__input -radio" type="radio" name="Dou you prefer web lectures or physical lectures?" value="" checked="checked">
+
+        <input id="lecture_type_radio_1" class="base-form__input -radio" type="radio" name="Dou you prefer web lectures or physical lectures?" value="Web lectures">
         <label for="lecture_type_radio_1" class="base-form__label radio-label">Web lectures</label>
 
-        <input id="lecture_type_radio_2" class="base-form__input -radio" type="radio" name="lecture-type" value="Physical lectures">
+        <input id="lecture_type_radio_2" class="base-form__input -radio" type="radio" name="Dou you prefer web lectures or physical lectures?" value="Physical lectures">
         <label for="lecture_type_radio_2" class="base-form__label radio-label">Physical lectures</label>
     </fieldset>
 
     <label class="base-form__label -input">
         How would you <em>rate</em> our web lectures? (0 - 10)
-        <input class="base-form__input -slider" type="range" name="rate" value="5" min="0" max="10">
+        <input class="base-form__input -slider" type="range" name="How would you rate our web lectures?" value="5" min="0" max="10">
     </label>
 
     <div class='base-form__submit'>
-        <input class="btn -secondary" type="submit" value="Previous">
+        <a class="btn -secondary" href="">Previous</a>
         <input class="btn -primary" type="submit" value="Next step">
     </div>
 </form>

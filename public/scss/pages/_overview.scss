@@ -1,0 +1,39 @@
+.overview {
+    padding: 3rem 8% 4rem;
+}
+
+.overview__pages-list {
+    padding: 0;
+}
+
+.overview__page__answers-list {
+    padding-left: 1rem;
+}
+
+.overview__page, .overview__page__answers {
+    margin: 1rem 0;
+    list-style-type: none;
+    font-family: $header-font-family;
+    font-size: $body-font-size;
+    color: $darkBlue;
+}
+
+.overview__page__title {
+    font-size: $subheader-font-size;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.overview__page__question {
+    display: block;
+}
+
+.overview__page__answer {
+
+
+    &.-empty {
+        color: $red
+    }
+}

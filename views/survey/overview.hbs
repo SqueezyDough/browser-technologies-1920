@@ -3,15 +3,29 @@
     <h2>Survey</h2>
 </header>
 
-<section class="results">
-    <ol class="results__list">
-        <li class="results__list__page">
-            <h3 class="results__list__page">Booting up</h1>
-            [form data]
+<form class="overview">
+    <ol class="overview__pages-list">
+        {{#each user.forms}}
+        <li class="overview__page">
+            <h3 class="overview__page__title">{{this.pathName}}</h3>
+            <ul class="overview__page__answers-list">
+                {{#each this.formData}}
+                    <li class="overview__page__answers">
+                        <span class="overview__page__question">{{@key}}</span>
+                        {{#if this}}
+                            <em class="overview__page__answer">{{this}}</em>
+                            {{else}}
+                            <em class="overview__page__answer -empty">Not answered</em>
+                        {{/if}}
+                    </li>
+                {{/each}}
+            </ul>
         </li>
-        <li>
-            <h3 class="results__list__page">Web lectures</h1>
-            [form data]
-        </li>
+        {{/each}}
     </ol>
-</section>
+
+    <div class='base-form__submit'>
+        <a class="btn -secondary" href="">Previous</a>
+        <input class="btn -primary" type="submit" value="Next step">
+    </div>
+</form>

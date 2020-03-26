@@ -73,6 +73,8 @@ em {
   font-family: "Inconsolata-bold", monospace;
   font-size: 1rem;
   color: #040D2C;
+  text-align: center;
+  text-decoration: none;
   transition: all .2s;
   cursor: pointer; }
   .btn:hover, .-primary:hover, .-secondary:hover {
@@ -251,13 +253,29 @@ input[type="text"] {
   text-transform: uppercase;
   font-family: "Inconsolata-bold", monospace; }
 
-.results {
+.overview {
   padding: 3rem 8% 4rem; }
 
-.results__list {
-  padding: 0;
-  list-style-type: none; }
+.overview__pages-list {
+  padding: 0; }
 
-.results__list__page {
-  font-size: 1.5rem;
+.overview__page__answers-list {
+  padding-left: 1rem; }
+
+.overview__page, .overview__page__answers {
+  margin: 1rem 0;
+  list-style-type: none;
+  font-family: "Avenir-Heavy", sans-serif;
+  font-size: 1rem;
   color: #040D2C; }
+
+.overview__page__title {
+  font-size: 1.5rem; }
+  .overview__page__title::first-letter {
+    text-transform: uppercase; }
+
+.overview__page__question {
+  display: block; }
+
+.overview__page__answer.-empty {
+  color: #FF0449; }
