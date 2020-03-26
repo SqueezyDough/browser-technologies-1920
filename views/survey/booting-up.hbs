@@ -8,7 +8,7 @@
 
     <label class="base-form__label -input">
         What is your <em>username</em>?
-        <input class="base-form__input" type="text" name="What is your username?" placeholder="Kroko Dino">
+        <input class="base-form__input" type="text" name="What is your username?" value="{{formData.[What is your username?]}}" placeholder="Kroko Dino">
     </label>
 
     <fieldset class="base-form__fieldset">
@@ -16,28 +16,28 @@
 
         <input id="gender_radio_0" class="base-form__input -radio" type="radio" name="Select your gender" value="" checked="checked">
 
-        <input id="gender_radio_1" class="base-form__input -radio" type="radio" name="Select your gender" value="Male">
+        <input id="gender_radio_1" class="base-form__input -radio" type="radio" name="Select your gender" value="Male" {{#equals formData.[Select your gender] 'Male'}} checked="checked" {{/equals}}>
         <label for="gender_radio_1" class="base-form__label radio-label">Male</label>
 
-        <input id="gender_radio_2" class="base-form__input -radio" type="radio" name="Select your gender" value="Female">
+        <input id="gender_radio_2" class="base-form__input -radio" type="radio" name="Select your gender" value="Female" {{#equals formData.[Select your gender] 'Female'}} checked="checked" {{/equals}}>
         <label for="gender_radio_2" class="base-form__label radio-label">Female</label>
 
-        <input id="gender_radio_3" class="base-form__input -radio" type="radio" name="Select your gender" value="Vacuum-cleaner">
+        <input id="gender_radio_3" class="base-form__input -radio" type="radio" name="Select your gender" value="Vacuum cleaner" {{#equals formData.[Select your gender] 'Vacuum cleaner'}} checked="checked" {{/equals}}>
         <label for="gender_radio_3" class="base-form__label radio-label">Vacuüm cleaner</label>
     </fieldset>
 
     <label class="base-form__label -input">
         What is your <em>age</em>?
-        <input class="base-form__input -number" type="text" name="What is your age?" inputmode="numeric" placeholder="21">
+        <input class="base-form__input -number" type="text" name="What is your age?" value="{{formData.[What is your age?]}}" inputmode="numeric" placeholder="21">
     </label>
 
     <label class="base-form__label -input">
         Which <em>major</em> program are you following?
-        <input class="base-form__input" type="text" name="Which major< program are you following?" placeholder="Communications & Multimedia design">
+        <input class="base-form__input" type="text" name="Which major program are you following?" value="{{formData.[Which major program are you following?]}}" placeholder="Communications & Multimedia design">
     </label>
 
     <div class='base-form__submit'>
-        <a class="btn -secondary" href="">Previous</a>
+        <a class="btn -secondary" href="/survey/{{user.pin}}">Previous</a>
         <input class="btn -primary" type="submit" value="Next step">
     </div>
 </form>

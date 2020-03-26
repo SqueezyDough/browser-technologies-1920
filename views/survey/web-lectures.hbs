@@ -11,13 +11,13 @@
 
         <input id="get-up_radio_0" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="" checked="checked">
 
-        <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="7AM">
+        <input id="get-up_radio_1" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="7AM" {{#equals formData.[At what time do you get out of bed?] '7AM'}} checked="checked" {{/equals}}>
         <label for="get-up_radio_1" class="base-form__label radio-label">7AM <em>early bird</em></label>
 
-        <input id="get-up_radio_2" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="9AM">
+        <input id="get-up_radio_2" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="9AM" {{#equals formData.[At what time do you get out of bed?] '9AM'}} checked="checked" {{/equals}}>
         <label for="get-up_radio_2" class="base-form__label radio-label">9AM <em>just in time</em></label>
 
-        <input id="get-up_radio_3" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="1PM">
+        <input id="get-up_radio_3" class="base-form__input -radio" type="radio" name="At what time do you get out of bed?" value="1PM" {{#equals formData.[At what time do you get out of bed?] '1AM'}} checked="checked" {{/equals}}>
         <label for="get-up_radio_3" class="base-form__label radio-label">1PM <em>wait for code reviews</em></label>
     </fieldset>
 
@@ -26,10 +26,10 @@
 
         <input id="mute/mic_radio_0" class="base-form__input -radio" type="radio" name="Mute or Mic?" value="" checked="checked">
 
-        <input id="mute/mic_radio_1" class="base-form__input -radio" type="radio" name="Mute or Mic?" value="Mute">
+        <input id="mute/mic_radio_1" class="base-form__input -radio" type="radio" name="Mute or Mic?" value="Mute" {{#equals formData.[Mute or Mic?] 'Mute'}} checked="checked" {{/equals}}>
         <label for="mute/mic_radio_1" class="base-form__label radio-label">Mute</label>
 
-        <input id="mute/mic_radio_2" class="base-form__input -radio" type="radio" name="Mute or Mic?" value="Mic">
+        <input id="mute/mic_radio_2" class="base-form__input -radio" type="radio" name="Mute or Mic?" value="Mic" {{#equals formData.[Mute or Mic?] 'Mic'}} checked="checked" {{/equals}}>
         <label for="mute/mic_radio_2" class="base-form__label radio-label">Mic</label>
     </fieldset>
 
@@ -38,10 +38,10 @@
 
         <input id="games_radio_0" class="base-form__input -radio" type="radio" name="Which game are you playing during the web lectures?" value="" checked="checked">
 
-        <input id="games_radio_1" class="base-form__input -radio" type="radio" name="Which game are you playing during the web lectures?" value="COD Warzone">
+        <input id="games_radio_1" class="base-form__input -radio" type="radio" name="Which game are you playing during the web lectures?" value="COD Warzone" {{#equals formData.[Which game are you playing during the web lectures?] 'COD Warzone'}} checked="checked" {{/equals}}>
         <label for="games_radio_1" class="base-form__label radio-label">COD Warzone</label>
 
-        <input id="games_radio_2" class="base-form__input -radio" type="radio" name="Which game are you playing during the web lectures?" value="Clash of Clans">
+        <input id="games_radio_2" class="base-form__input -radio" type="radio" name="Which game are you playing during the web lectures?" value="Clash of Clans" {{#equals formData.[Which game are you playing during the web lectures?] 'Clash of Clans'}} checked="checked" {{/equals}}>
         <label for="games_radio_2" class="base-form__label radio-label">Clash of Clans</label>
     </fieldset>
 
@@ -55,10 +55,10 @@
 
         <input id="lecture_type_radio_0" class="base-form__input -radio" type="radio" name="Dou you prefer web lectures or physical lectures?" value="" checked="checked">
 
-        <input id="lecture_type_radio_1" class="base-form__input -radio" type="radio" name="Dou you prefer web lectures or physical lectures?" value="Web lectures">
+        <input id="lecture_type_radio_1" class="base-form__input -radio" type="radio" name="Dou you prefer web lectures or physical lectures?" value="Web lectures" {{#equals formData.[Dou you prefer web lectures or physical lectures?] 'Web lectures'}} checked="checked" {{/equals}}>
         <label for="lecture_type_radio_1" class="base-form__label radio-label">Web lectures</label>
 
-        <input id="lecture_type_radio_2" class="base-form__input -radio" type="radio" name="Dou you prefer web lectures or physical lectures?" value="Physical lectures">
+        <input id="lecture_type_radio_2" class="base-form__input -radio" type="radio" name="Dou you prefer web lectures or physical lectures?" value="Physical lectures" {{#equals formData.[Dou you prefer web lectures or physical lectures?] 'Physical lectures'}} checked="checked" {{/equals}}>
         <label for="lecture_type_radio_2" class="base-form__label radio-label">Physical lectures</label>
     </fieldset>
 
@@ -68,7 +68,7 @@
     </label>
 
     <div class='base-form__submit'>
-        <a class="btn -secondary" href="">Previous</a>
+        <a class="btn -secondary" href="/survey/booting-up/{{user.pin}}">Previous</a>
         <input class="btn -primary" type="submit" value="Next step">
     </div>
 </form>

@@ -30,7 +30,7 @@ exports.webLectures = (req, res) => {
     const prevPath =  'survey/booting-up'
     const formData = handleForm(req, prevPath)
 
-    console.log('formData', formData)
+    // console.log('formData', formData)
 
     // render view
     render.renderView(req, res, nextPath, formData)
@@ -41,6 +41,18 @@ exports.overview = (req, res) => {
     const nextPath = 'survey/overview'
     const prevPath =  'survey/web-lectures'
     const formData = handleForm(req, prevPath)
+
+    render.renderView(req, res, nextPath, formData)
+}
+
+exports.getSurveyPage = function (req, res) {
+    const pin = req.params.pin
+    const formData = store.getUserProgression(pin)
+
+    const nextPath = req.url
+        .split('/')
+        .slice(1, 3)
+        .join('/')
 
     render.renderView(req, res, nextPath, formData)
 }

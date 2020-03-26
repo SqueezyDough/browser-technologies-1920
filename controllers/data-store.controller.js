@@ -20,7 +20,9 @@ exports.getUserProgression = pin => {
 exports.updateUserProgression = (user, formData) => {
     const storagePath = './data/survey-users.json'
 
-    user.forms.push(formData)
+    const findFormIndex = user.forms.findIndex((form) => form.path === formData.path)
+
+    findFormIndex === -1 ?  user.forms.push(formData) : user.forms[findFormIndex] = formData
 
     mergeDataCollection(user, storagePath)
 
