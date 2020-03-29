@@ -18,12 +18,15 @@ exports.getUserProgression = pin => {
 }
 
 exports.updateUserProgression = (user, formData) => {
-    const storagePath = './data/survey-users.json'
-    const findFormIndex = user.forms.findIndex((form) => form.page === formData.page)
+    // exclude these pages
+    if (formData.page !== -1 && formData.page !== 0) {
+        const storagePath = './data/survey-users.json'
+        const findFormIndex = user.forms.findIndex((form) => form.page === formData.page)
 
-    findFormIndex === -1 ? user.forms.push(formData) : user.forms[findFormIndex] = formData
+        findFormIndex === -1 ? user.forms.push(formData) : user.forms[findFormIndex] = formData
 
-    mergeDataCollection(user, storagePath)
+        mergeDataCollection(user, storagePath)
+    }
 
     return user
 }

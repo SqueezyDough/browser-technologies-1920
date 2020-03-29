@@ -1,132 +1,27 @@
 [
   {
-    "pin": "067451",
-    "forms": []
-  },
-  {
-    "pin": "590496",
-    "forms": []
-  },
-  {
-    "pin": "693218",
+    "pin": "442683",
     "forms": [
-      {
-        "page": 0,
-        "pathName": "Return PIN",
-        "formData": {}
-      },
       {
         "page": 1,
         "pathName": "Booting up",
         "formData": {
-          "What is your username?": "",
-          "Select your gender": "",
-          "What is your age?": "",
-          "Which major program are you following?": ""
-        }
-      }
-    ]
-  },
-  {
-    "pin": "123655",
-    "forms": [
-      {
-        "page": 0,
-        "pathName": "Return PIN",
-        "formData": {}
-      },
-      {
-        "page": 1,
-        "pathName": "Booting up",
-        "formData": {
-          "What is your username?": "",
-          "Select your gender": "",
-          "What is your age?": "",
-          "Which major program are you following?": ""
+          "What is your username?": "KRoKo DINo",
+          "Select your gender": "Vacuum cleaner",
+          "What is your age?": "21",
+          "Which major program are you following?": "c"
         }
       },
       {
         "page": 2,
         "pathName": "Web lectures",
         "formData": {
-          "At what time do you get out of bed?": "",
+          "At what time do you get out of bed?": "7AM",
           "Mute or Mic?": "",
           "Which game are you playing during the web lectures?": "",
           "Where did you finish during Koop's Clown Fiësta Kahoot quiz?": "",
           "Dou you prefer web lectures or physical lectures?": "",
-          "How would you rate our web lectures?": "5"
-        }
-      }
-    ]
-  },
-  {
-    "pin": "159394",
-    "forms": []
-  },
-  {
-    "pin": "984743",
-    "forms": []
-  },
-  {
-    "pin": "655654",
-    "forms": []
-  },
-  {
-    "pin": "583801",
-    "forms": [
-      {
-        "page": 0,
-        "pathName": "Return PIN",
-        "formData": {}
-      },
-      {
-        "page": 1,
-        "pathName": "Booting up",
-        "formData": {
-          "What is your username?": "",
-          "Select your gender": "",
-          "What is your age?": "",
-          "Which major program are you following?": ""
-        }
-      }
-    ]
-  },
-  {
-    "pin": "544512",
-    "forms": []
-  },
-  {
-    "pin": "274687",
-    "forms": []
-  },
-  {
-    "pin": "903625",
-    "forms": [
-      {
-        "page": 0,
-        "pathName": "Return PIN",
-        "formData": {}
-      },
-      {
-        "page": 1,
-        "pathName": "Booting up",
-        "formData": {
-          "What is your username?": "",
-          "Select your gender": "Female",
-          "What is your age?": "",
-          "Which major program are you following?": "m"
-        }
-      },
-      {
-        "page": 2,
-        "pathName": "Web lectures",
-        "formData": {
-          "At what time do you get out of bed?": "9AM",
-          "Mute or Mic?": "Mute",
-          "Which game are you playing during the web lectures?": "",
-          "Where did you finish during Koop's Clown Fiësta Kahoot quiz?": "",
-          "Dou you prefer web lectures or physical lectures?": "Physical lectures",
-          "How would you rate our web lectures?": "5"
+          "How would you rate our web lectures?": "0"
         }
       }
     ]
