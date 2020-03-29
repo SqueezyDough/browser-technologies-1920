@@ -1,6 +1,6 @@
 const render = require('./render.controller')
 const store = require('./data-store.controller')
-const querystring = require('querystring');
+const pinGenerator = require('generate-pincode')
 
 require("dotenv").config();
 
@@ -9,72 +9,134 @@ exports.init = (req, res) => {
     res.render('home', { app: process.env.NAME})
 }
 
-exports.returnPin = (req, res) => {
-    const pin = res.locals.pin
-    const userJson = store.storeUserProgression(pin)
-    const userStringified = JSON.stringify(userJson)
+exports.surveyProgresser = (req, res) => {
+    const pin = req.query.page === '0' ? generatePIN(6) : JSON.parse(req.body.progressionTracker).pin
+    const userJson = req.query.page === '0' ? store.storeUserProgression(pin) : store.getUserProgression(pin)
+    const formData = req.query.page !== '0' ? handleForm(req, userJson) : false
 
-    res.render('survey/return-pin', {
-        user: userJson,
+    if (req.body.pin) {
+        // TODO: get page only
+        console.log('session')
+        findPreviousSession(req, res)
+    } else {
+        console.log('no-session')
+
+        renderView(req, res, userJson)
+    }
+
+}
+
+function renderView(req, res, user, page) {
+    const userStringified = JSON.stringify(user)
+    const requestPage = page || req.query.page
+    const data = getFormData(user, requestPage) || false
+
+    // TODO: check if tracker is needed (userStringified)
+    res.render('survey/index', {
+        page: page || req.query.page,
+        formData: data.formData,
+        user: user,
         userString: userStringified
     })
 }
 
-exports.bootingUp = (req, res) => {
-    const nextPath = 'survey/booting-up'
-    render.renderView(req, res, nextPath)
+function getFormData(user, page) {
+    return user.forms.find((form) => {
+        // nostrict --> typof = string and number
+        return form.page == page
+    })
 }
 
-exports.webLectures = (req, res) => {
-    const nextPath = 'survey/web-lectures'
-    const prevPath =  'survey/booting-up'
-    const formData = handleForm(req, prevPath)
-
-    // console.log('formData', formData)
-
-    // render view
-    render.renderView(req, res, nextPath, formData)
+exports.getSurveyPage = (req, res) => {
+    const user = store.getUserProgression(req.params.pin)
+    renderView(req, res, user, req.params.page)
 }
 
-exports.overview = (req, res) => {
-    // paths
-    const nextPath = 'survey/overview'
-    const prevPath =  'survey/web-lectures'
-    const formData = handleForm(req, prevPath)
-
-    render.renderView(req, res, nextPath, formData)
-}
-
-exports.getSurveyPage = function (req, res) {
+//TODO check if needed
+exports.loadPreviousSession = (req, res) => {
+    console.log(req.params.pin)
     const pin = req.params.pin
-    const formData = store.getUserProgression(pin)
+    const user = store.getUserProgression(pin)
 
-    const nextPath = req.url
-        .split('/')
-        .slice(1, 3)
-        .join('/')
+    console.log('k')
 
-    render.renderView(req, res, nextPath, formData)
+    if (user) {
+        console.log('a')
+        const uncompletedForm = findLarenderViewFormWithBlanks(user.forms)
+
+        if (uncompletedForm) {
+            console.log('b')
+            renderView(req, res, user, path)
+        } else {
+            //TODO CHECK PATHS
+            console.log('c')
+            const surveyPaths = ['survey/booting-up', 'survey/web-lectures']
+            // has completed forms but not all
+            const unVisitedPaths = surveyPaths.filter((path, index) => user.forms[index] === undefined)
+            getSurveyPage(req, res, unVisitedPaths[0], pin)
+        }
+    }
 }
 
-function handleForm(req, prevPath) {
-    const processedData = processFormData(req.body, prevPath)
-    const progression = JSON.parse(req.body.progressionTracker)
-    const updatedUser = store.updateUserProgression(progression, processedData)
+findPreviousSession = (req, res) => {
+    const pin = req.body.pin
+    const user = store.getUserProgression(pin)
+
+    if (user) {
+        const uncompletedForm = findLarenderViewFormWithBlanks(user.forms)
+
+        if (uncompletedForm) {
+            renderView(req, res, user, uncompletedForm.page)
+        } else {
+            // has completed forms but not all
+            const surveyPages = [0, 1, 2, 3]
+            const unVisitedPaths = surveyPages.filter((page, index) => user.forms[index] === undefined)
+            renderView(req, res, user, unVisitedPaths[0])
+        }
+    // fallback --> if no user is found start a new servey
+    } else {
+        renderView(req, res, user, 0)
+    }
+}
+
+function findLarenderViewFormWithBlanks(forms) {
+    const formsWithBlanks = forms.filter(form => {
+        const isAllFilled = Object.values(form.formData).every(answer => answer !== '')
+
+        if (!isAllFilled) return form
+    })
+
+    console.log('formsWithBlanks -->', formsWithBlanks)
+
+    return formsWithBlanks[0]
+}
+
+
+function handleForm(req, user) {
+    const processedData = processFormData(req)
+    const updatedUser = store.updateUserProgression(user, processedData)
 
     return updatedUser
 }
 
-function processFormData(rawData, path) {
-    const splittedPath = path.split('/')
-    const pathName = splittedPath[splittedPath.length -1].replace('-', ' ')
+function processFormData(req) {
+    const pathNames = [
+        'Return PIN',
+        'Booting up',
+        'Web lectures',
+        'Overview',
+    ]
 
     const data = {
-        path: path,
-        pathName: pathName,
-        formData: Object.assign({}, rawData)
+        page: (req.query.page - 1),
+        pathName: pathNames[(req.query.page - 1)],
+        formData: Object.assign({}, req.body)
     }
 
     delete data.formData.progressionTracker
     return data
+}
+
+function generatePIN(length) {
+    return pinGenerator(length)
 }

@@ -3,7 +3,7 @@
     <h2>Survey</h2>
 </header>
 
-<form class="base-form" method="POST" action="/survey/overview">
+<form class="base-form" method="POST" action="/survey/?page=3">
     <input type="hidden" name="progressionTracker" value="{{userString}}">
 
     <fieldset class="base-form__fieldset">
@@ -68,7 +68,7 @@
     </label>
 
     <div class='base-form__submit'>
-        <a class="btn -secondary" href="/survey/booting-up/{{user.pin}}">Previous</a>
+        <a class="btn -secondary" href="/survey/1/{{user.pin}}">Previous</a>
         <input class="btn -primary" type="submit" value="Next step">
     </div>
 </form>

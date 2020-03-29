@@ -1,1 +1,134 @@
-[{"pin":"140676","forms":[{"path":"survey/booting-up","pathName":"booting up","formData":{"What is your username?":"KRoKo DINo","Select your gender":"","What is your age?":"","Which major program are you following?":""}}]},{"pin":"909556","forms":[{"path":"survey/booting-up","pathName":"booting up","formData":{"What is your username?":"","Select your gender":"","What is your age?":"","Which major program are you following?":""}}]},{"pin":"640898","forms":[{"path":"survey/booting-up","pathName":"booting up","formData":{"What is your username?":"","Select your gender":"","What is your age?":"","Which major program are you following?":""}}]},{"pin":"388444","forms":[{"path":"survey/booting-up","pathName":"booting up","formData":{"What is your username?":"","Select your gender":"","What is your age?":"","Which major program are you following?":""}}]},{"pin":"693371","forms":[{"path":"survey/booting-up","pathName":"booting up","formData":{"What is your username?":"","Select your gender":"","What is your age?":"","Which major program are you following?":""}}]},{"pin":"441132","forms":[{"path":"survey/booting-up","pathName":"booting up","formData":{"What is your username?":"","Select your gender":"","What is your age?":"","Which major program are you following?":""}}]},{"pin":"105665","forms":[{"path":"survey/booting-up","pathName":"booting up","formData":{"What is your username?":"","Select your gender":"Female","What is your age?":"21","Which major program are you following?":""}},{"path":"survey/web-lectures","pathName":"web lectures","formData":{"At what time do you get out of bed?":"","Mute or Mic?":"","Which game are you playing during the web lectures?":"","Where did you finish during Koop's Clown Fiësta Kahoot quiz?":"","Dou you prefer web lectures or physical lectures?":"Web lectures","How would you rate our web lectures?":"5"}}]},{"pin":"776972","forms":[{"path":"survey/booting-up","pathName":"booting up","formData":{"What is your username?":"","Select your gender":"Male","What is your age?":"","Which major program are you following?":""}},{"path":"survey/web-lectures","pathName":"web lectures","formData":{"At what time do you get out of bed?":"9AM","Mute or Mic?":"Mic","Which game are you playing during the web lectures?":"Clash of Clans","Where did you finish during Koop's Clown Fiësta Kahoot quiz?":"","Dou you prefer web lectures or physical lectures?":"Physical lectures","How would you rate our web lectures?":"5"}}]},{"pin":"240663","forms":[{"path":"survey/booting-up","pathName":"booting up","formData":{"What is your username?":"","Select your gender":"Male","What is your age?":"","Which major program are you following?":""}},{"path":"survey/web-lectures","pathName":"web lectures","formData":{"At what time do you get out of bed?":"","Mute or Mic?":"","Which game are you playing during the web lectures?":"Clash of Clans","Where did you finish during Koop's Clown Fiësta Kahoot quiz?":"","Dou you prefer web lectures or physical lectures?":"","How would you rate our web lectures?":"5"}}]}]
+[
+  {
+    "pin": "067451",
+    "forms": []
+  },
+  {
+    "pin": "590496",
+    "forms": []
+  },
+  {
+    "pin": "693218",
+    "forms": [
+      {
+        "page": 0,
+        "pathName": "Return PIN",
+        "formData": {}
+      },
+      {
+        "page": 1,
+        "pathName": "Booting up",
+        "formData": {
+          "What is your username?": "",
+          "Select your gender": "",
+          "What is your age?": "",
+          "Which major program are you following?": ""
+        }
+      }
+    ]
+  },
+  {
+    "pin": "123655",
+    "forms": [
+      {
+        "page": 0,
+        "pathName": "Return PIN",
+        "formData": {}
+      },
+      {
+        "page": 1,
+        "pathName": "Booting up",
+        "formData": {
+          "What is your username?": "",
+          "Select your gender": "",
+          "What is your age?": "",
+          "Which major program are you following?": ""
+        }
+      },
+      {
+        "page": 2,
+        "pathName": "Web lectures",
+        "formData": {
+          "At what time do you get out of bed?": "",
+          "Mute or Mic?": "",
+          "Which game are you playing during the web lectures?": "",
+          "Where did you finish during Koop's Clown Fiësta Kahoot quiz?": "",
+          "Dou you prefer web lectures or physical lectures?": "",
+          "How would you rate our web lectures?": "5"
+        }
+      }
+    ]
+  },
+  {
+    "pin": "159394",
+    "forms": []
+  },
+  {
+    "pin": "984743",
+    "forms": []
+  },
+  {
+    "pin": "655654",
+    "forms": []
+  },
+  {
+    "pin": "583801",
+    "forms": [
+      {
+        "page": 0,
+        "pathName": "Return PIN",
+        "formData": {}
+      },
+      {
+        "page": 1,
+        "pathName": "Booting up",
+        "formData": {
+          "What is your username?": "",
+          "Select your gender": "",
+          "What is your age?": "",
+          "Which major program are you following?": ""
+        }
+      }
+    ]
+  },
+  {
+    "pin": "544512",
+    "forms": []
+  },
+  {
+    "pin": "274687",
+    "forms": []
+  },
+  {
+    "pin": "903625",
+    "forms": [
+      {
+        "page": 0,
+        "pathName": "Return PIN",
+        "formData": {}
+      },
+      {
+        "page": 1,
+        "pathName": "Booting up",
+        "formData": {
+          "What is your username?": "",
+          "Select your gender": "Female",
+          "What is your age?": "",
+          "Which major program are you following?": "m"
+        }
+      },
+      {
+        "page": 2,
+        "pathName": "Web lectures",
+        "formData": {
+          "At what time do you get out of bed?": "9AM",
+          "Mute or Mic?": "Mute",
+          "Which game are you playing during the web lectures?": "",
+          "Where did you finish during Koop's Clown Fiësta Kahoot quiz?": "",
+          "Dou you prefer web lectures or physical lectures?": "Physical lectures",
+          "How would you rate our web lectures?": "5"
+        }
+      }
+    ]
+  }
+]

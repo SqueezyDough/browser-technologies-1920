@@ -70,7 +70,7 @@ input[type="text"] {
 .base-form__input {
     padding: .5rem 1rem;
     font-size: $body-font-size;
-    transition: all .2s;
+    transition: padding .2s;
 
     &[type="text"] {
         padding: .5rem 1rem .5rem 0;
@@ -191,7 +191,7 @@ input[type="text"] {
     max-width: 30rem;
     background-color: $yellow;
     color: $darkBlue;
-    transition: all .2s;
+    transition: transform .2s;
 }
 
 .progression-bar__pin {

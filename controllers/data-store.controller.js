@@ -1,10 +1,10 @@
 const fs = require('fs')
 
 // TODO: check if user is in data
-exports.storeUserProgression = (pin, formData) => {
+exports.storeUserProgression = pin => {
     const storagePath = './data/survey-users.json'
     const data = readData(storagePath) || []
-    const user = findUser(pin, data) ? updateUser(pin, formData) : createUser(pin, formData)
+    const user = findUser(pin, data) ? createUser(pin) : createUser(pin)
 
     data.push(user)
     setUserProgression(data)
@@ -19,10 +19,9 @@ exports.getUserProgression = pin => {
 
 exports.updateUserProgression = (user, formData) => {
     const storagePath = './data/survey-users.json'
+    const findFormIndex = user.forms.findIndex((form) => form.page === formData.page)
 
-    const findFormIndex = user.forms.findIndex((form) => form.path === formData.path)
-
-    findFormIndex === -1 ?  user.forms.push(formData) : user.forms[findFormIndex] = formData
+    findFormIndex === -1 ? user.forms.push(formData) : user.forms[findFormIndex] = formData
 
     mergeDataCollection(user, storagePath)
 
@@ -31,30 +30,25 @@ exports.updateUserProgression = (user, formData) => {
 
 function mergeDataCollection(changedUser, path) {
     const data = readData(path)
-    const updatedData = data.filter(user => user.pin !== changedUser.pin)
+    const otherUsers = data.filter(user => user.pin !== changedUser.pin)
 
-    updatedData.push(changedUser)
+    otherUsers.push(changedUser)
+    setUserProgression(otherUsers)
 
-    setUserProgression(updatedData)
 }
 
 function setUserProgression(data) {
-    const json = JSON.stringify(data);
+    const json = JSON.stringify(data ,null, 2);
     fs.writeFileSync('./data/survey-users.json', json);
 }
 
 function findUser (pin, data) {
-    return data.find(users => users.pin === pin)
+    const user = data.find(users => users.pin === pin)
+
+    return user
 }
 
-function updateUser(pin, user) {
-    return user = {
-        pin: pin,
-        forms: []
-    }
-}
-
-function createUser(pin, formData) {
+function createUser(pin) {
     return user = {
         pin: pin,
         forms: []

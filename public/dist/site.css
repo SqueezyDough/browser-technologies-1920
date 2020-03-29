@@ -75,9 +75,10 @@ em {
   color: #040D2C;
   text-align: center;
   text-decoration: none;
-  transition: all .2s;
+  transition: .2s;
+  transition-property: transform flex-grow;
   cursor: pointer; }
-  .btn:hover, .-primary:hover, .-secondary:hover {
+  .btn:hover, .-primary:hover, .-secondary:hover, .btn :focus, .-primary :focus, .-secondary :focus {
     flex-grow: 1;
     transform: scaleY(1.2);
     background-color: #EFD609;
@@ -156,7 +157,7 @@ input[type="text"] {
 .base-form__input {
   padding: .5rem 1rem;
   font-size: 1rem;
-  transition: all .2s; }
+  transition: padding .2s; }
   .base-form__input[type="text"] {
     padding: .5rem 1rem .5rem 0;
     margin: 1rem 0;
@@ -246,7 +247,7 @@ input[type="text"] {
   max-width: 30rem;
   background-color: #EFD609;
   color: #040D2C;
-  transition: all .2s; }
+  transition: transform .2s; }
 
 .progression-bar__pin {
   padding: 0 8%;
@@ -271,8 +272,6 @@ input[type="text"] {
 
 .overview__page__title {
   font-size: 1.5rem; }
-  .overview__page__title::first-letter {
-    text-transform: uppercase; }
 
 .overview__page__question {
   display: block; }

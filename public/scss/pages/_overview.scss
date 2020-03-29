@@ -20,10 +20,6 @@
 
 .overview__page__title {
     font-size: $subheader-font-size;
-
-    &::first-letter {
-        text-transform: uppercase;
-    }
 }
 
 .overview__page__question {
@@ -31,8 +27,6 @@
 }
 
 .overview__page__answer {
-
-
     &.-empty {
         color: $red
     }

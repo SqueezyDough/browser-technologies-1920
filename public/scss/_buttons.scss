@@ -5,10 +5,11 @@
     color: $darkBlue;
     text-align: center;
     text-decoration: none;
-    transition: all .2s;
+    transition: .2s;
+    transition-property: transform flex-grow;
     cursor: pointer;
 
-    &:hover {
+    &:hover, :focus {
         flex-grow: 1;
         transform: scaleY(1.2);
         background-color: $yellow;
