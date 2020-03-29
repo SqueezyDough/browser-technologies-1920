@@ -14,8 +14,6 @@ exports.surveyProgresser = (req, res) => {
         ? generatePIN(6)
         : req.body.pin || JSON.parse(req.body.progressionTracker).pin
 
-    console.log('pin', pin)
-
     const userJson = req.query.page === '0' && !req.body.pin
         ? store.storeUserProgression(pin)
         : store.getUserProgression(pin)
@@ -25,42 +23,25 @@ exports.surveyProgresser = (req, res) => {
         handleForm(req, userJson)
     }
 
-    console.log('userJson', userJson)
-
-    // console.log(pin)
-
     const page = req.body.pin ? findPreviousSession(userJson) : 0
 
-    console.log(page)
-
-    renderView(req, res, userJson, page)
-}
-
-function getFormData(user, page) {
-    return user.forms.find((form) => {
-        // nostrict --> typof = string and number
-        return form.page == page
-    })
+    render.renderView(req, res, userJson, page)
 }
 
 exports.getSurveyPage = (req, res) => {
     const user = store.getUserProgression(req.params.pin)
-    renderView(req, res, user, req.params.page)
+    render.renderView(req, res, user, req.params.page)
 }
 
-findPreviousSession = user => {
+function findPreviousSession(user) {
     const uncompletedForm = findNextFormWithBlanks(user.forms)
 
     if (uncompletedForm) {
-        console.log('uncompleted -->', uncompletedForm.page)
         return uncompletedForm.page
     } else {
-
         // has completed forms but not all
         const surveyPages = [1, 2, 3]
         const unVisitedPaths = surveyPages.filter((page, index) => user.forms[index] === undefined)
-
-        console.log('next -->', unVisitedPaths[0])
 
         return unVisitedPaths[0]
     }
@@ -73,15 +54,12 @@ function findNextFormWithBlanks(forms) {
         if (!isAllFilled) return form
     })
 
-    // console.log('formsWithBlanks -->', formsWithBlanks)
-
     return formsWithBlanks[0]
 }
 
 
 function handleForm(req, user) {
     const processedData = processFormData(req)
-    console.log('user', user)
     store.updateUserProgression(user, processedData)
 }
 
@@ -105,19 +83,4 @@ function processFormData(req) {
 
 function generatePIN(length) {
     return pinGenerator(length)
-}
-
-
-function renderView(req, res, user, page) {
-    const userStringified = JSON.stringify(user)
-    const requestPage = page || req.query.page
-    const data = getFormData(user, requestPage) || false
-
-    // TODO: check if tracker is needed (userStringified)
-    res.render('survey/index', {
-        page: page || req.query.page,
-        formData: data.formData,
-        user: user,
-        userString: userStringified
-    })
 }

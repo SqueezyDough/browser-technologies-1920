@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const survey = require('../controllers/survey.controller')
-const utils = require('../controllers/utils.controller')
 
 // TODO restore session
 router.get('/', survey.init)
