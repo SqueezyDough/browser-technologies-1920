@@ -16,7 +16,8 @@ body {
     box-sizing: border-box;
 }
 
-main {
+// IE10^ replacement for main
+.ie-wrapper {
     min-height: 100vh;
     max-height: 100vh;
     overflow-y: auto;

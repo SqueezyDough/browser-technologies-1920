@@ -6,10 +6,10 @@
     text-align: center;
     text-decoration: none;
     transition: .2s;
-    transition-property: transform flex-grow;
+    transition-property: transform, flex-grow, background-color, color;
     cursor: pointer;
 
-    &:hover, :focus {
+    &:hover, &:focus {
         flex-grow: 1;
         transform: scaleY(1.2);
         background-color: $yellow;
