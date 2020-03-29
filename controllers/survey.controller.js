@@ -23,7 +23,7 @@ exports.surveyProgresser = (req, res) => {
         handleForm(req, userJson)
     }
 
-    const page = req.body.pin ? findPreviousSession(userJson) : 0
+    const page = req.body.pin ? findPreviousSession(res, userJson) : 0
 
     render.renderView(req, res, userJson, page)
 }
@@ -33,7 +33,7 @@ exports.getSurveyPage = (req, res) => {
     render.renderView(req, res, user, req.params.page)
 }
 
-function findPreviousSession(user) {
+function findPreviousSession(res, user) {
     const uncompletedForm = findNextFormWithBlanks(user.forms)
 
     if (uncompletedForm) {

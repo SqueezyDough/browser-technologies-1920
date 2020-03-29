@@ -317,3 +317,15 @@ input[type="text"] {
 
 .overview__page__answer.-empty {
   color: #FF0449; }
+
+.error {
+  padding: 3rem 8% 4rem; }
+  .error > h1 {
+    font-size: 3.2rem;
+    color: #C60036; }
+  .error > p {
+    font-size: 1.5rem; }
+  .error > a {
+    display: inline-block;
+    margin-top: 2rem;
+    text-align: left; }

@@ -1,0 +1,18 @@
+.error {
+    padding: 3rem 8% 4rem;
+
+    > h1 {
+        font-size: $header-font-size;
+        color: $darkRed
+    }
+
+    > p {
+        font-size: $subheader-font-size;
+    }
+
+    > a {
+        display: inline-block;
+        margin-top: 2rem;
+        text-align: left;
+    }
+}
