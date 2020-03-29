@@ -4,16 +4,15 @@
 </header>
 
 <form class="base-form" method="POST", action="/survey/?page=1">
-    <fieldset class="base-form__fieldset">
-        <legend class="base-form__legend -enlarge">Complete this survey at any time.
-            <p>Just save <em>{{user.pin}}</em> to complete your survey at a later date.  </p>
-        </legend>
+    <header class="-enlarge">
+        <h3>Complete this survey at any time.</h3>
+        <p>Just save <em>{{user.pin}}</em> to complete your survey at a later date.</p>
+    </header>
 
-        <input type="hidden" name="progressionTracker" value="{{userString}}">
-    </fieldset>
+    <input type="hidden" name="progressionTracker" value="{{userString}}">
 
     <div class='base-form__submit '>
-        {{!-- <input class="btn -secondary" type="submit" value="Previous"> --}}
+        <a class="btn -secondary" href="/">Nope</a>
         <input class="btn -primary" type="submit" value="Gotcha">
     </div>
 </form>

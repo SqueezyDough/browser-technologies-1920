@@ -2,13 +2,19 @@
     const userStringified = JSON.stringify(user)
     const requestPage = page || req.query.page
     const data = getFormData(user, requestPage) || false
+    const progression = setProgression(requestPage)
 
     res.render('survey/index', {
         page: page || req.query.page,
         formData: data.formData,
         user: user,
-        userString: userStringified
+        userString: userStringified,
+        progression: progression
     })
+}
+
+function setProgression(page) {
+    return page / 3 * 100
 }
 
 function getFormData(user, page) {

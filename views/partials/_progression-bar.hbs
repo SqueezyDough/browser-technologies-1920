@@ -1,4 +1,11 @@
-<section class="progression-bar">
-    <span class="progression-bar__pin">return PIN: <em>{{user.pin}}</em></span>
-    <span class="visibility-hidden">Save the return PIN on your computer to complete this session later.</span>
-</section>
+<ul class="progression-bar">
+    <li class="progression-bar__pin">
+        <span class="">return PIN: <em>{{user.pin}}</em></span>
+    </li>
+    <li class="progression-bar__inner">
+        <progress class="progression-bar__status" value="{{progression}}" max="100"> {{progression}} </progress>
+    </li>
+    <li class="visibility-hidden">
+        Save the return PIN on your computer to complete this session later.
+    </li>
+</ul>

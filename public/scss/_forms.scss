@@ -34,15 +34,15 @@ input[type="text"] {
     padding: 0;
     margin-bottom: 2rem;
     border: none;
+}
 
-    .-enlarge {
-        font-size: 36px;
-        margin-bottom: 4rem;
+.-enlarge {
+    font-size: 36px;
+    margin-bottom: 4rem;
 
-        p {
-            font-size: $subheader-font-size;
-            font-family: $body-font-family;
-        }
+    p {
+        font-size: $subheader-font-size;
+        font-family: $body-font-family;
     }
 }
 
@@ -183,19 +183,68 @@ input[type="text"] {
 }
 
 .progression-bar {
+    display: inline-block;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: .3rem 0;
+    margin: 0;
     max-width: 30rem;
+    max-height: 3.3rem;
+    z-index: 999;
     background-color: $yellow;
     color: $darkBlue;
     transition: transform .2s;
+
+    @supports(display: flex) {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .progression-bar__pin {
-    padding: 0 8%;
+    display: inline-block;
+    padding-left: 8%;
+    white-space: nowrap;
     text-transform: uppercase;
     font-family: $contrast-font-family;
+}
+
+.progression-bar__inner {
+    display: inline-block;
+    padding: 0 8%;
+    width: 100%;
+    min-width: 120px;
+
+    @supports(display: flex) {
+        flex-grow: 1;
+        width: 100%;
+    }
+}
+
+.progression-bar__status {
+    display: inline-block;
+    box-shadow: 4px 4px 0 0 $darkBlue;
+
+
+
+
+    &[value] {
+        -webkit-appearance: none;
+                appearance: none;
+
+        width: 100%;
+        height: 1rem;
+        border: none;
+
+        &::-webkit-progress-bar {
+            background-color: $yellow;
+            border: 1px solid $yellow
+        }
+
+        &::-webkit-progress-value {
+            background-color: $darkBlue;
+        }
+    }
 }

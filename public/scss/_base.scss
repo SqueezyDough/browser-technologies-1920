@@ -52,6 +52,10 @@ em {
     font-family: $contrast-font-family;
     text-transform: uppercase;
     font-style: normal;
+
+    &::selection {
+        background-color: white;
+    }
 }
 
 ::selection {
@@ -59,7 +63,8 @@ em {
 }
 
 .visibility-hidden {
-    display: block;
+    display: inline-block;
     overflow: hidden;
     height: 0;
+    width: 0;
 }
