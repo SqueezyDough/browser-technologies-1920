@@ -2,8 +2,6 @@
     var url = window.location.href.split('/')
     var endpoint = url[url.length -1]
 
-    console.log(endpoint)
-
     // routes
     if (localStorage && endpoint === "") {
         if (getLocalStorage()) {
@@ -19,7 +17,39 @@
 
         getLocalStorage() ? updateLocalStorage(formData.pin) : setLocalStorage(formData.pin)
     }
+
+    if (localStorage) {
+        watchFormValues()
+    }
 })()
+
+function watchFormValues() {
+    var inputs = document.getElementsByClassName('base-form__input')
+
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('change', function() {
+            sendData(this)
+        })
+    }
+}
+
+function sendData(input) {
+    var tracker = document.querySelector('input[type="hidden"]')
+    var pin = JSON.parse(tracker.value).pin
+
+    var body = [
+        pin,
+        {[input.name]: input.value}
+    ]
+
+    var bodyString = JSON.stringify(body)
+
+    var url = '../../survey/update-session'
+    var request = new XMLHttpRequest()
+        request.open("POST", url)
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(bodyString)
+}
 
 function loadPrevSession(sessions) {
     if (sessions) {

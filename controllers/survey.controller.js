@@ -60,6 +60,16 @@ exports.getSessions = (req, res) => {
     })
 }
 
+exports.updateDuringSession = (req, res) => {
+    const body = req.body
+    const pin = body[0]
+    const formData = Object.entries(body[1]).flat()
+
+    store.updateUserSession(pin, formData)
+
+    return 'done'
+}
+
 exports.loadSession = (req, res) => {
     const user = store.getUserProgression(req.body.session)
     const page = findPreviousSession(user)

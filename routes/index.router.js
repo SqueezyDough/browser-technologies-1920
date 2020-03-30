@@ -12,5 +12,6 @@ router.get('/survey', survey.getSurveyPage)
 router.get('/survey/:page/:pin', survey.getSurveyPage)
 
 router.post('/survey', survey.surveyProgresser)
+router.post('/survey/update-session', survey.updateDuringSession)
 
 module.exports = router

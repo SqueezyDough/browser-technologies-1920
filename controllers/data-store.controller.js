@@ -17,6 +17,39 @@ exports.getUserProgression = pin => {
     return findUser(pin, data)
 }
 
+exports.updateUserSession = (pin, formData) => {
+    const storagePath = './data/survey-users.json'
+    const storage = readData(storagePath)
+
+    const key = formData[0]
+    // console.log(key)
+
+    const value = formData [1]
+    // console.log(value)
+
+    const user = findUser(pin, storage)
+
+    const modifiedForm = user.forms.filter(form => {
+        const keys = Object.keys(form.formData)
+        const keyIndex = keys.indexOf(key)
+
+        if (keyIndex > -1) {
+            form.formData[key] = value
+            return form
+        }
+    })
+
+    // console.log('form -->', modifiedForm)
+
+
+    user.forms[modifiedForm.page] = modifiedForm
+    console.log('user -->', user.forms[modifiedForm.page])
+
+    mergeDataCollection(user, storagePath )
+
+    return 'done'
+}
+
 exports.updateUserProgression = (user, formData) => {
     // exclude these pages
     if (formData.page !== -1 && formData.page !== 0) {

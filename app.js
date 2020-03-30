@@ -22,12 +22,12 @@ app
         partialsDir: path.join(__dirname, 'views/partials')
     }))
     .use('/', router)
-    // .use((err, req, res, next) => {
-    //     res.locals.error = err;
-    //     const status = err.status || 500;
-    //     res.status(status);
-    //     res.render('error', {
-    //         message: "We can't find this session!"
-    //     });
-    // })
+    .use((err, req, res, next) => {
+        res.locals.error = err;
+        const status = err.status || 500;
+        res.status(status);
+        res.render('error', {
+            message: "We can't find this session!"
+        });
+    })
     .listen(port, () => console.log(`Listening on port ${port}!`))

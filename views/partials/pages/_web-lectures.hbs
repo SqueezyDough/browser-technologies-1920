@@ -47,7 +47,7 @@
 
     <label class="base-form__label -input">
         Where did you finish during Koop's <em>Clown Fiësta</em> Kahoot quiz?
-        <input class="base-form__input -number" type="text" name="Where did you finish during Koop's Clown Fiësta Kahoot quiz?" inputmode="numeric" pattern="[0-50]{2}" placeholder="35">
+        <input class="base-form__input -number" type="text" name="Where did you finish during Koop's Clown Fiësta Kahoot quiz?" inputmode="numeric" pattern="[0-50]{2}" value="{{formData.[Where did you finish during Koop's Clown Fiësta Kahoot quiz?]}}" placeholder="35">
     </label>
 
     <fieldset class="base-form__fieldset">
@@ -64,7 +64,7 @@
 
     <label class="base-form__label -input">
         How would you <em>rate</em> our web lectures? (0 - 10)
-        <input class="base-form__input -slider" type="range" name="How would you rate our web lectures?" value="5" min="0" max="10">
+        <input class="base-form__input -slider" type="range" name="How would you rate our web lectures?" value="{{formData.[How would you rate our web lectures?]}}" min="0" max="10">
     </label>
 
     <div class='base-form__submit'>

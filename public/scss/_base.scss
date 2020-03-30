@@ -9,7 +9,7 @@ body {
     @supports (mix-blend-mode: multiply) {
         background-image: url('../images/cmd_iconen.png');
         background-blend-mode: multiply;
-        animation: moveBackground 90s ease-in-out infinite;
+        animation: moveBackground 60s ease-in-out infinite;
     }
 
     @keyframes moveBackground {
