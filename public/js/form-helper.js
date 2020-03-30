@@ -35,10 +35,12 @@ function watchFormValues() {
 
 function sendData(input) {
     var tracker = document.querySelector('input[type="hidden"]')
+    var page = tracker.getAttribute('data-page')
     var pin = JSON.parse(tracker.value).pin
 
     var body = [
         pin,
+        page,
         {[input.name]: input.value}
     ]
 

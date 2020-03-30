@@ -17,16 +17,11 @@ exports.getUserProgression = pin => {
     return findUser(pin, data)
 }
 
-exports.updateUserSession = (pin, formData) => {
+exports.updateUserSession = (pin, page, formData) => {
     const storagePath = './data/survey-users.json'
     const storage = readData(storagePath)
-
     const key = formData[0]
-    // console.log(key)
-
     const value = formData [1]
-    // console.log(value)
-
     const user = findUser(pin, storage)
 
     const modifiedForm = user.forms.filter(form => {
@@ -39,11 +34,23 @@ exports.updateUserSession = (pin, formData) => {
         }
     })
 
-    // console.log('form -->', modifiedForm)
+    if (modifiedForm.length === 0) {
+        const form = user.forms[page-1]
 
+        if (form) {
+            user.forms[page-1].formData[key] = value
+        } else {
+            const temp = {
+                page: page,
+                formData: {}
+            }
 
-    user.forms[modifiedForm.page] = modifiedForm
-    console.log('user -->', user.forms[modifiedForm.page])
+            temp.formData[key] = value
+            user.forms.push(temp)
+        }
+    } else {
+        user.forms[modifiedForm.page] = modifiedForm
+    }
 
     mergeDataCollection(user, storagePath )
 

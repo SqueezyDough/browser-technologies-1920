@@ -63,9 +63,10 @@ exports.getSessions = (req, res) => {
 exports.updateDuringSession = (req, res) => {
     const body = req.body
     const pin = body[0]
-    const formData = Object.entries(body[1]).flat()
+    const page = parseInt(body[1])
+    const formData = Object.entries(body[2]).flat()
 
-    store.updateUserSession(pin, formData)
+    store.updateUserSession(pin, page, formData)
 
     return 'done'
 }
