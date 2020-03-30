@@ -162,6 +162,7 @@ input[type="text"] {
 .base-form__input {
   padding: .5rem 1rem;
   font-size: 1rem;
+  border-radius: 0;
   transition: padding .2s; }
   .base-form__input[type="text"] {
     padding: .5rem 1rem .5rem 0;

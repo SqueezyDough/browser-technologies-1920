@@ -62,6 +62,7 @@ input[type="text"] {
 .base-form__input {
     padding: .5rem 1rem;
     font-size: $body-font-size;
+    border-radius: 0;
     transition: padding .2s;
 
     &[type="text"] {
