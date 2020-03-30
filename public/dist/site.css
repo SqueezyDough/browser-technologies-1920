@@ -301,6 +301,7 @@ input[type="text"] {
     -webkit-appearance: none;
     appearance: none;
     width: calc(100% - 6.5rem);
+    max-width: calc(100% - 6.5rem);
     height: 1rem;
     border: none; }
     .progression-bar__status[value]::-webkit-progress-bar {
