@@ -45,7 +45,6 @@ body {
   color: #040D2C; }
   .ie-wrapper > section, .ie-wrapper form {
     position: relative;
-    background-color: #FF0449;
     z-index: 1; }
   @media screen and (min-width: 30rem) {
     .ie-wrapper {
@@ -79,12 +78,13 @@ em {
   width: 0; }
 
 .btn, .-primary, .-secondary {
-  padding: .5rem 1.5rem;
   -webkit-appearance: none;
   appearance: none;
+  padding: .5rem 1.5rem;
   font-family: "Inconsolata-bold", monospace;
   font-size: 1rem;
   color: #040D2C;
+  border-radius: 0;
   text-align: center;
   text-decoration: none;
   transition: .2s;
@@ -122,22 +122,14 @@ input[type="text"] {
   position: relative;
   padding: 4rem 0;
   background-color: #08174A; }
+  .form-header em {
+    color: #08174A; }
   .form-header h1, .form-header h2 {
     margin: 0; }
-  .form-header::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -.1rem;
-    width: 100px;
-    height: 25px;
-    background-color: #FF0449;
-    box-shadow: #040D2C 8px 3px 0 0;
-    z-index: 0; }
 
 .base-form {
   position: relative;
-  padding: 3rem 8% 4rem; }
+  padding: 3rem 8% 2rem; }
 
 .base-form__fieldset {
   padding: 0;
@@ -270,17 +262,14 @@ input[type="text"] {
         width: initial; } }
 
 .progression-bar {
+  position: relative;
   display: inline-block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  padding: .3rem 0;
   margin: 0;
+  padding: 0;
   max-width: 30rem;
-  max-height: 3.3rem;
+  background-color: #08174A;
   z-index: 999;
-  background-color: #EFD609;
   color: #040D2C;
   transition: transform .2s; }
   @supports (display: flex) {
@@ -288,37 +277,45 @@ input[type="text"] {
       display: flex;
       justify-content: space-between; } }
 
-.progression-bar__pin {
+.progression-bar__label {
   display: inline-block;
-  padding-left: 8%;
+  padding: .5rem;
+  background-color: #FF0449;
   white-space: nowrap;
   text-transform: uppercase;
   font-family: "Inconsolata-bold", monospace; }
+  .progression-bar__label span {
+    padding: .5rem; }
+  .progression-bar__label em {
+    background-color: transparent; }
 
 .progression-bar__inner {
-  display: inline-block;
-  padding: 0 8%;
   width: 100%;
   min-width: 120px; }
-  @supports (display: flex) {
-    .progression-bar__inner {
-      flex-grow: 1;
-      width: 100%; } }
 
 .progression-bar__status {
-  display: inline-block;
-  box-shadow: 4px 4px 0 0 #040D2C; }
+  position: absolute;
+  bottom: 0;
+  left: 6.5rem; }
   .progression-bar__status[value] {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
+    width: calc(100% - 6.5rem);
     height: 1rem;
     border: none; }
     .progression-bar__status[value]::-webkit-progress-bar {
-      background-color: #EFD609;
-      border: 1px solid #EFD609; }
+      background-color: #08174A; }
     .progression-bar__status[value]::-webkit-progress-value {
-      background-color: #040D2C; }
+      background-color: #C60036; }
+    @supports (animation: 1s) {
+      .progression-bar__status[value] {
+        width: 0;
+        animation: progession ease-out 1s forwards;
+        animation-delay: .2s; } }
+
+@keyframes progession {
+  to {
+    width: calc(100% - 6.5rem); } }
 
 .latest-session {
   padding: .5rem 1rem;

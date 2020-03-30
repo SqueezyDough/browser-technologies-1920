@@ -1,7 +1,9 @@
 <header class='form-header'>
     <h1>Booting up</h1>
-    <h2>Survey</h2>
+    <h2><em>{{user.pin}}</em></h2>
 </header>
+
+{{> _progression-bar}}
 
 <form class="base-form" method="POST" action="/survey/?page=2">
     <input type="hidden" name="progressionTracker" value="{{userString}}">
@@ -41,5 +43,3 @@
         <input class="btn -primary" type="submit" value="Next step">
     </div>
 </form>
-
-{{> _progression-bar}}

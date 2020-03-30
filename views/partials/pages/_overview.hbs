@@ -1,7 +1,9 @@
 <header class='form-header'>
     <h1>Overview</h1>
-    <h2>Survey</h2>
+    <h2><em>{{user.pin}}</em></h2>
 </header>
+
+{{> _progression-bar}}
 
 <form class="overview">
     <ol class="overview__pages-list">
@@ -29,5 +31,3 @@
         <input class="btn -primary" type="submit" value="Send">
     </div>
 </form>
-
-{{> _progression-bar}}

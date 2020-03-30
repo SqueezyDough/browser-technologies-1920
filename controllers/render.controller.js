@@ -14,7 +14,7 @@
 }
 
 function setProgression(page) {
-    return page / 3 * 100
+    return Math.floor(page / 3 * 100)
 }
 
 function getFormData(user, page) {
