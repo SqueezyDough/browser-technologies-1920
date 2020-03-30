@@ -1,0 +1,34 @@
+<header class='form-header'>
+    <h1>Minor webdev</h1>
+    <h2>Sessions</h2>
+</header>
+
+<form class="base-form" action="/sessions" method="POST">
+    <fieldset class="base-form__fieldset">
+        <legend class="base-form__legend -enlarge">
+            Yes!
+            <p class="base-form__hint">We have found your <em>previous</em> session(s).</p>
+        </legend>
+
+        {{#each sessions}}
+            {{#equals @index 0}}
+                <div class="latest-session">
+                    <h3>Latest session</h3>
+                    <input id="sessions_radio_{{this}}" class="base-form__input -radio" type="radio" name="session" value="{{this}}" checked="checked" required>
+                    <label for="sessions_radio_{{this}}" class="base-form__label radio-label">{{this}}</label>
+                </div>
+                {{else}}
+                    <input id="sessions_radio_{{this}}" class="base-form__input -radio" type="radio" name="session" value="{{this}}" required>
+                    <label for="sessions_radio_{{this}}" class="base-form__label radio-label">{{this}}</label>
+            {{/equals}}
+
+        {{/each}}
+
+    </fieldset>
+
+    <div class='base-form__submit'>
+        <a class="btn -secondary" href="/survey">New survey</a>
+        <input class="btn -primary" type="submit" value="Proceed">
+    </div>
+</form>
+

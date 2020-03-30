@@ -29,11 +29,45 @@ exports.surveyProgresser = (req, res) => {
 }
 
 exports.getSurveyPage = (req, res) => {
-    const user = store.getUserProgression(req.params.pin)
-    render.renderView(req, res, user, req.params.page)
+    if (req.params.pin) {
+        const user = store.getUserProgression(req.params.pin)
+        const page = findPreviousSession(user)
+
+        render.renderView(req, res, user, req.params.page || page)
+    } else {
+        const pin = generatePIN(6)
+        const user = store.storeUserProgression(pin)
+        const userStringified = JSON.stringify(user)
+
+        res.render('survey/index', {
+            page: 0,
+            user: user,
+            userString: userStringified,
+            pin: generatePIN(6)
+        })
+    }
 }
 
-function findPreviousSession(res, user) {
+exports.getSessions = (req, res) => {
+    const sessionsString = req.params.sessions
+
+    const sessions = sessionsString
+        .split(',')
+        .reverse()
+
+    res.render('sessions', {
+        sessions: sessions
+    })
+}
+
+exports.loadSession = (req, res) => {
+    const user = store.getUserProgression(req.body.session)
+    const page = findPreviousSession(user)
+
+    render.renderView(req, res, user, page)
+}
+
+function findPreviousSession(user) {
     const uncompletedForm = findNextFormWithBlanks(user.forms)
 
     if (uncompletedForm) {
