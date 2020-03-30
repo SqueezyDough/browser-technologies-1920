@@ -347,6 +347,21 @@ input[type="text"] {
 .overview__page__answer.-empty {
   color: #FF0449; }
 
+.resume-life {
+  padding: 3rem 8%; }
+
+.resume-life__header {
+  color: #040D2C; }
+
+.resume-life__inner {
+  margin-bottom: 4rem;
+  font-size: 1.5rem; }
+
+.message {
+  display: block;
+  margin: 2rem 0;
+  font-size: .8rem; }
+
 .error {
   padding: 3rem 8% 4rem; }
   .error > h1 {

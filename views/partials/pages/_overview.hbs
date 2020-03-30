@@ -5,7 +5,7 @@
 
 {{> _progression-bar}}
 
-<form class="overview">
+<section class="overview">
     <ol class="overview__pages-list">
         {{#each user.forms}}
         <li class="overview__page">
@@ -28,6 +28,6 @@
 
     <div class='base-form__submit'>
         <a class="btn -secondary" href="/survey/2/{{user.pin}}">Previous</a>
-        <input class="btn -primary" type="submit" value="Send">
+        <a class="btn -primary" href="/survey/resume-life">Send survey</a>
     </div>
-</form>
+</section>
