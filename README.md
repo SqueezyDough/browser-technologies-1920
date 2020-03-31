@@ -9,6 +9,51 @@ This course challenges you to make a survey that is accessible to all users brow
 
 ------
 
+## My App in a nutshell
+<details>
+  <summary>Image: Home page</summary>
+  
+  ![Bitmap](https://user-images.githubusercontent.com/33430653/78004702-bfb79b80-733a-11ea-8b72-a6217bd42695.png)
+</details>
+
+<details>
+  <summary>Image: Home page - Session found</summary>
+  
+  ![Bitmap2](https://user-images.githubusercontent.com/33430653/78004701-bf1f0500-733a-11ea-921a-9c259889dd92.png)
+</details>
+
+<details>
+  <summary>Image: Start survey - PIN</summary>
+  
+  ![Bitmap3](https://user-images.githubusercontent.com/33430653/78004699-be866e80-733a-11ea-80b6-d8bfcef925d5.png)
+</details>
+
+<details>
+  <summary>Image: Survey - Booting Up</summary>
+  
+  ![Bitmap4](https://user-images.githubusercontent.com/33430653/78004698-bdedd800-733a-11ea-89e3-8ef1acec0d1f.png)
+</details>
+
+<details>
+  <summary>Image: Survey - Web lectures</summary>
+  
+  ![Bitmap5](https://user-images.githubusercontent.com/33430653/78004695-bd554180-733a-11ea-8bc1-f05e964ae72b.png)
+</details>
+
+<details>
+  <summary>Image: Survey - Overview</summary>
+  
+  ![Bitmap6](https://user-images.githubusercontent.com/33430653/78004689-bcbcab00-733a-11ea-8ec2-6bafe71a8768.png)
+</details>
+
+<details>
+  <summary>Image: Resume life - PIN</summary>
+  
+  ![Bitmap7](https://user-images.githubusercontent.com/33430653/78004682-ba5a5100-733a-11ea-9451-ebc401fbfd6e.png)
+</details>
+
+------
+
 ## The semantics of progressive enhanced layers
 The course defines 3 layers for progressive enhancement.
 
@@ -288,49 +333,6 @@ You'll need JS enables and support local storage to use these features.
 
 #### Fallbacks
 The user can still use the submit button to submit the form.
-
-## My App in a nutshell
-<details>
-  <summary>Image: Home page</summary>
-  
-  ![Bitmap](https://user-images.githubusercontent.com/33430653/78004702-bfb79b80-733a-11ea-8b72-a6217bd42695.png)
-</details>
-
-<details>
-  <summary>Image: Home page - Session found</summary>
-  
-  ![Bitmap2](https://user-images.githubusercontent.com/33430653/78004701-bf1f0500-733a-11ea-921a-9c259889dd92.png)
-</details>
-
-<details>
-  <summary>Image: Start survey - PIN</summary>
-  
-  ![Bitmap3](https://user-images.githubusercontent.com/33430653/78004699-be866e80-733a-11ea-80b6-d8bfcef925d5.png)
-</details>
-
-<details>
-  <summary>Image: Survey - Booting Up</summary>
-  
-  ![Bitmap4](https://user-images.githubusercontent.com/33430653/78004698-bdedd800-733a-11ea-89e3-8ef1acec0d1f.png)
-</details>
-
-<details>
-  <summary>Image: Survey - Web lectures</summary>
-  
-  ![Bitmap5](https://user-images.githubusercontent.com/33430653/78004695-bd554180-733a-11ea-8bc1-f05e964ae72b.png)
-</details>
-
-<details>
-  <summary>Image: Survey - Overview</summary>
-  
-  ![Bitmap6](https://user-images.githubusercontent.com/33430653/78004689-bcbcab00-733a-11ea-8ec2-6bafe71a8768.png)
-</details>
-
-<details>
-  <summary>Image: Resume life - PIN</summary>
-  
-  ![Bitmap7](https://user-images.githubusercontent.com/33430653/78004682-ba5a5100-733a-11ea-9451-ebc401fbfd6e.png)
-</details>
 
 
 ------
