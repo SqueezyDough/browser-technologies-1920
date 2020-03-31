@@ -5,7 +5,7 @@
     // routes
     if (localStorage && endpoint === "") {
         if (getLocalStorage()) {
-            const sessions = getLocalStorage()
+            var sessions = getLocalStorage()
 
             loadPrevSession(sessions)
         }
