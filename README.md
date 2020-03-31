@@ -23,37 +23,49 @@ This course challenges you to make a survey that is accessible to all users brow
 <a name="app">
   
 ## My App in a nutshell
+### How it works
+My app uses (just like kahoot) a PIN to access a previous session. The PIN can be submitted via the homescreen to access it or a new survey can be started. When the user starts a new session the PIN is stored on the server + all the submitted answers. When the user returns and fills in his PIN number on the homescreen, the user is redirected to the page with the first blank input field.
+
+### Enhancing the PIN
+When JS and localstorage are both enabled, some extra magic happens. You automatically see your previous session on the homescreen. From here you can either continue or start a new survey.
+
 <details>
   <summary>Image: Home page</summary>
+  Option to use your PIN or start a new survey.Both work with thhe same submit button
   
   ![Bitmap](https://user-images.githubusercontent.com/33430653/78004702-bfb79b80-733a-11ea-8b72-a6217bd42695.png)
 </details>
 
 <details>
   <summary>Image: Home page - Session found</summary>
+  Overview of all your sessions. JS and localstorage dependant.
   
   ![Bitmap2](https://user-images.githubusercontent.com/33430653/78004701-bf1f0500-733a-11ea-921a-9c259889dd92.png)
 </details>
 
 <details>
   <summary>Image: Start survey - PIN</summary>
+  Start a new survey. Here a new PIN is generated
   
   ![Bitmap3](https://user-images.githubusercontent.com/33430653/78004699-be866e80-733a-11ea-80b6-d8bfcef925d5.png)
 </details>
 
 <details>
   <summary>Image: Survey - Booting Up</summary>
+  First form.
   
   ![Bitmap4](https://user-images.githubusercontent.com/33430653/78004698-bdedd800-733a-11ea-89e3-8ef1acec0d1f.png)
 </details>
 
 <details>
   <summary>Image: Survey - Web lectures</summary>
+Second form
   
   ![Bitmap5](https://user-images.githubusercontent.com/33430653/78004695-bd554180-733a-11ea-8bc1-f05e964ae72b.png)
 </details>
 
 <details>
+  Here are all your filled answers. Unanswered questions are red. 
   <summary>Image: Survey - Overview</summary>
   
   ![Bitmap6](https://user-images.githubusercontent.com/33430653/78004689-bcbcab00-733a-11ea-8ec2-6bafe71a8768.png)
@@ -61,6 +73,7 @@ This course challenges you to make a survey that is accessible to all users brow
 
 <details>
   <summary>Image: Resume life - PIN</summary>
+  Survey is send.
   
   ![Bitmap7](https://user-images.githubusercontent.com/33430653/78004682-ba5a5100-733a-11ea-9451-ebc401fbfd6e.png)
 </details>
