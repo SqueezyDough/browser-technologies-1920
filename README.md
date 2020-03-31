@@ -238,7 +238,7 @@ This is ofcourse achieved with CSS.
       .btn {
           display: inline-block;
           margin-bottom: 1rem;
-          width: 100%;
+          width: 100%; // fallback
 
           // make buttons original width so they can be side to side
           @supports (display: flex) {
