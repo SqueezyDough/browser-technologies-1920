@@ -334,6 +334,14 @@ The user can still use the submit button to submit the form.
 
 ------
 
+## Differences betweem browsers
+### Color contrast
+[image]
+
+### Progress bars
+
+------
+
 ## Features tests
 ### Disable images
 I only use a background image when a specific device width is reached. Disabling this will not lead to any troubles.
