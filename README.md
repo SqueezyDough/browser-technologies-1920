@@ -1,14 +1,17 @@
 # Browser Technologies @cmda-minor-web 1920
 
 # Table of contents
-* [Case](#Case)
-* [Assignments](#Assignments)
-* [Assignments](#Assignments)
-* [Assignments](#Assignments)
-* [Assignments](#Assignments)
+* [Case description](#case)
+* [My App in a nutshell](#app)
+* [The semantics of progressive enhanced layers](#semantics)
+* [The functional layer](#layer1)
+* [The practical layer](#layer2)
+* [The delightful layer](#layer3)
+* [Differences between browsers](#browsers)
+* [Features tests](#tests)
 * [Assignments](#Assignments)
 
-<a name="Case">
+<a name="case">
   
 ## CASE 1: Progressive enhanced survey
 ### Introduction
@@ -16,6 +19,8 @@ This course challenges you to make a survey that is accessible to all users brow
 
 ------
 
+<a name="app">
+  
 ## My App in a nutshell
 <details>
   <summary>Image: Home page</summary>
@@ -61,6 +66,8 @@ This course challenges you to make a survey that is accessible to all users brow
 
 ------
 
+<a name="semantics">
+  
 ## The semantics of progressive enhanced layers
 The course defines 3 layers for progressive enhancement.
 
@@ -75,6 +82,8 @@ In my view the functional term should inherit the usable layer, because a functi
 * Delightful layer - Adding user delight
 
 ------
+
+<a name="layer1">
 
 ### The functional layer
 The functional layer includes all that makes an app usable for its intended purpose. In my case a form should at least be accessible to all user in any circumstance, save the filled answers and give a confirmation when sending the survey. As a measurement tool good functionality can be measured by accuracy. A good functional survey should generate expected, and thus accurate, outcomes. 
@@ -163,6 +172,8 @@ All of this is achieved by handling requests on the server. This is the most rob
 No fallbacks needed
 
 ------
+
+<a name="layer2">
 
 ### The practical layer
 The practical layer expands the CORE functionality with a strong visual ordening that makes your app easy to use.
@@ -257,6 +268,8 @@ IE doesn't support the main element. Therefore any styling on it doesn't work. T
 
 ------
 
+<a name="layer3">
+
 ### The delightful layer
 The delightful layer includes everything that sparks some emotion from the user including nice micro-animation or pick up where you left off (basically any emotion that can be considered uplifting).
 
@@ -347,6 +360,8 @@ The user can still use the submit button to submit the form.
 
 ------
 
+<a name="browsers">
+
 ## Differences between browsers
 <details>
   <summary>Contrast colors</summary>
@@ -372,6 +387,8 @@ For Safari on iOS I also had to use:
 To overwrite the default button styling.
 
 ------
+
+<a name="tests">
 
 ## Features tests
 ### Disable images
