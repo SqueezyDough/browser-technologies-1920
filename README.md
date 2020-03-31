@@ -1,8 +1,7 @@
 # Browser Technologies @cmda-minor-web 1920
 
 # Table of contents
-* [Assignment 1.2](#Assignment-1.2)
-* [Assignment 2](#Assignment-2)
+* [Assignments](#Assignments)
 
 ## FEEDBACK REQUEST
 * Kun je me feedback geven over m'n oplossingen voor de 3 verschillende lagen?
@@ -23,8 +22,8 @@ This course challenges you to make a survey that is accessible to all users brow
 
 ------
 
-<a name="Assignment-1.2"></a>
-## Assignment 1.1 & 1.2 - Break your OBA App
+<a name="Assignments"></a>
+## Assignments
 
 <details>
 <summary>Assignment 1.1 & 1.2</summary>
@@ -163,8 +162,6 @@ Fixes:
 
 </details>
 
-<a name="Assignment-2"></a>
-## Assignment 2
 <details>
 <summary>Assignment 2</summary>
   
