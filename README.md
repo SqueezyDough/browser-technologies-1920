@@ -13,14 +13,22 @@ This course challenges you to make a survey that is accessible to all users brow
 The course defines 3 layers for progressive enhancement.
 
 * Functional layer - The CORE functionality
-* Usable layer - Adding CSS
+* Usable layer - Adding basic styling and functionality
 * Pleasurable layer - Adding user delight
 
 In my view the functional term should inherit the usable layer, because a functional application is also usable and an application that is not usable cannot be functional. Therefore I would like to redefine these layers.
 
 * Functional layer - The CORE functionality
-* Pleasurable layer - Adding basic CSS
+* Practical layer - Visual ordening of the HTML structure and basic functionality
 * Delightful layer - Adding user delight
+
+### Functional layer
+The functional layer includes all that makes an app usable for its intended purpose. In my case a form should at least be accessible to all user in any circumstance, save the filled answers and give a confirmation when sending the form. 
+
+#### Dependancies
+All of this is achieved by handling requests on the server. This is the most robust solution since it only depends on the server being up and running and your internet connection.
+
+
 
 ### The delightful layer
 The delightful layer includes everything that sparks some emotion from the user including nice micro-animation or pick up where you left off (basically any emotion that can be considered uplifting)
