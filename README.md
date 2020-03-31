@@ -23,7 +23,7 @@ In my view the functional term should inherit the usable layer, because a functi
 * Delightful layer - Adding user delight
 
 ### The functional layer
-The functional layer includes all that makes an app usable for its intended purpose. In my case a form should at least be accessible to all user in any circumstance, save the filled answers and give a confirmation when sending the form. 
+The functional layer includes all that makes an app usable for its intended purpose. In my case a form should at least be accessible to all user in any circumstance, save the filled answers and give a confirmation when sending the survey. As a measurement tool good functionality can be measured by accuracy. A good functional survey should generate expected, and thus accurate, outcomes. 
 
 <details>
   <summary>HTML markup</summary
@@ -66,7 +66,7 @@ The functional layer includes all that makes an app usable for its intended purp
   ```
 </details>
 <details>
-  <summary>Creatinng back buttons</summary
+  <summary>Creating back buttons</summary
     
   Sometimes the user makes a mistake. It's better to add back buttons to make it clear the user can go back, then to solely depend on the browser back button.
         
@@ -167,7 +167,83 @@ The part of the app depends on having browser support for specific CSS propertie
 The delightful layer includes everything that sparks some emotion from the user including nice micro-animation or pick up where you left off (basically any emotion that can be considered uplifting).
 
 
+<details>
+  <summary>Load your previous session(s)</summary
+    
+  With javascript anabled, I can store the survey PINS (ID's) on the client. This enables me to look for these pins on the server when the user comes back.
+  
+  
+  New survey pins are stored when visiting page 0 and local storage is enabled.
+  ```
+  if (localStorage && endpoint === "?page=0") {
+        var rawFormData = document.querySelector('input[name=progressionTracker]').value
+        var formData = JSON.parse(rawFormData)
 
+        getLocalStorage() ? updateLocalStorage(formData.pin) : setLocalStorage(formData.pin)
+    }
+  ```
+  
+  If local storage is enables and your endpoint is "" (AKA homepage), I look for survey pins and load the previous session.
+    
+  ```
+  if (localStorage && endpoint === "") {
+        if (getLocalStorage()) {
+            const sessions = getLocalStorage()
+
+            loadPrevSession(sessions)
+        }
+  }
+  ```
+</details>
+
+<details>
+  <summary>Auto saving when values change</summary
+    
+  Form data is usually sent when clicking the submit button. With JS enabled I can do this when values change. This is useful when the useful leaves the page without clicking submit, otherwise the filled in data will be lost.
+  
+  With this function I add eventlisteners to all inputs I want to watch. They call the sendData() function when the value changes.
+    
+  ```
+  if (localStorage) {
+        watchFormValues()
+  }
+  
+  ...
+    
+  function watchFormValues() {
+    var inputs = document.getElementsByClassName('base-form__input')
+
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('change', function() {
+            sendData(this)
+        })
+    }
+}
+  ```
+  
+  I use an XHR request to send the data from the input. XHR is also supported in IE while fetch is not.
+  ```
+  function sendData(input) {
+    var tracker = document.querySelector('input[type="hidden"]')
+    var page = tracker.getAttribute('data-page')
+    var pin = JSON.parse(tracker.value).pin
+
+    var body = [
+        pin,
+        page,
+        {[input.name]: input.value}
+    ]
+
+    var bodyString = JSON.stringify(body)
+
+    var url = '../../survey/update-session'
+    var request = new XMLHttpRequest()
+        request.open("POST", url)
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(bodyString)
+}
+  ```
+</details>
 
 
 ## My App in a nutshell
