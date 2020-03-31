@@ -154,8 +154,8 @@ All of this is achieved by handling requests on the server. This is the most rob
 No fallbacks needed
 
 ### The practical layer
-The practical layer expands the CORE functionality with functionality and visual ordening that makes your app easy to use.
-For an application to be pratical it needs a clear visual ordening of the HTML structure. This is ofcourse achieved with CSS. the practical layer should take away any frustration the user could experience when filling the survey. As a measument tool, practicality can be measured in completion time. A good practical survey can be completed relatively fast in comparison with a survey that lacks practicality.
+The practical layer expands the CORE functionality with a strong visual ordening that makes your app easy to use.
+This is ofcourse achieved with CSS.
 
 <details>
   <summary>Make it easy to read</summary
@@ -243,7 +243,6 @@ IE doesn't support the main element. Therefore any styling on it doesn't work. T
     }
 }
 ```
-
 
 ### The delightful layer
 The delightful layer includes everything that sparks some emotion from the user including nice micro-animation or pick up where you left off (basically any emotion that can be considered uplifting).
@@ -333,6 +332,55 @@ You'll need JS enables and support local storage to use these features.
 #### Fallbacks
 The user can still use the submit button to submit the form.
 
+------
+
+## Features tests
+### Disable images
+I only use a background image when a specific device width is reached. Disabling this will not lead to any troubles.
+
+------
+
+### Disable Custom fonts
+My app has a fallback for custom fonts. It just uses another sans-serif font.
+```
+$header-font-family: 'Avenir-Heavy', sans-serif;
+```
+
+------
+
+### Colors and color blindness
+I've used hight contrast colors for important content as labels and buttons. Placeholders and unchecked radio buttons have less contrast because these are visually less important. I've tested them to make sure they were still clearly visible in all color blind modes, no colors and in direct sunlight.
+
+------
+
+### No mouse or track pad
+Every :hover also has a :focus pseudoclass
+```
+&:hover, &:focus {
+    flex-grow: 1;
+    transform: scaleY(1.2);
+    background-color: $yellow;
+    border: 2px solid $darkBlue;
+    color: $darkBlue;
+}
+```
+
+Radio buttons needed some extra attention since you can't see if it when there is a focus on a selected radio button. Labels are uppercase and have a pointer when :focus is active.
+
+------
+
+### Disable broadband internet
+`SLOW 3G:` Everything still works but takes a few seconds to load.
+
+------
+
+### Disable cookies
+I'm not using cookies on my website.
+
+------
+
+### Disable local storage
+Everything still works, even when you disable it mid-session.
 
 ------
 
