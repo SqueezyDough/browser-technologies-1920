@@ -58,14 +58,16 @@ This course challenges you to make a survey that is accessible to all users brow
 The course defines 3 layers for progressive enhancement.
 
 * Functional layer - The CORE functionality
-* Usable layer - Adding basic styling and functionality
+* Usable layer - Adding styling
 * Pleasurable layer - Adding user delight
 
 In my view the functional term should inherit the usable layer, because a functional application is also usable and an application that is not usable cannot be functional. Therefore I would like to redefine these layers.
 
 * Functional layer - The CORE functionality
-* Practical layer - Visual ordening of the HTML structure and basic functionality
+* Practical layer - Visual ordening of the HTML structure
 * Delightful layer - Adding user delight
+
+------
 
 ### The functional layer
 The functional layer includes all that makes an app usable for its intended purpose. In my case a form should at least be accessible to all user in any circumstance, save the filled answers and give a confirmation when sending the survey. As a measurement tool good functionality can be measured by accuracy. A good functional survey should generate expected, and thus accurate, outcomes. 
@@ -152,6 +154,8 @@ All of this is achieved by handling requests on the server. This is the most rob
 
 #### Fallbacks
 No fallbacks needed
+
+------
 
 ### The practical layer
 The practical layer expands the CORE functionality with a strong visual ordening that makes your app easy to use.
@@ -244,6 +248,8 @@ IE doesn't support the main element. Therefore any styling on it doesn't work. T
 }
 ```
 
+------
+
 ### The delightful layer
 The delightful layer includes everything that sparks some emotion from the user including nice micro-animation or pick up where you left off (basically any emotion that can be considered uplifting).
 
@@ -334,8 +340,7 @@ The user can still use the submit button to submit the form.
 
 ------
 
-
-## Differences betweem browsers
+## Differences between browsers
 <details>
   <summary>Contrast colors</summary
     Color contrast is lower on chrome.
