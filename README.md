@@ -100,7 +100,7 @@ In my view the functional term should inherit the usable layer, because a functi
 <a name="layer1">
 
 ### The functional layer
-The functional layer includes all that makes an app usable for its intended purpose. In my case a form should at least be accessible to all user in any circumstance, save the filled answers and give a confirmation when sending the survey. As a measurement tool good functionality can be measured by accuracy. A good functional survey should generate expected, and thus accurate, outcomes. 
+The functional layer includes all that makes an app usable for its intended purpose. In my case a survey should at least be accessible to all user in any circumstance, save the filled answers and give a confirmation when sending the survey. As a measurement tool good functionality can be measured by accuracy. A good functional survey should generate expected, and thus accurate, outcomes. 
 
 <details>
   <summary>HTML markup</summary>
@@ -373,6 +373,86 @@ You'll need JS enables and support local storage to use these features.
 The user can still use the submit button to submit the form.
 
 ------
+
+<a name="fallbacks">
+
+## Fallbacks with Client side JS
+When you are writing client side javascript it is important to know which javascript methods you are using. Some if not many are not supported by older browsers. 
+
+### How I wrote JS
+I wrote JS entirely in ES5. This is the best supported version. It means you have to write JS like this:
+
+```
+if (localStorage && endpoint === "?page=0") {
+    var rawFormData = document.querySelector('input[name=progressionTracker]').value
+    var formData = JSON.parse(rawFormData)
+
+    getLocalStorage() ? updateLocalStorage(formData.pin) : setLocalStorage(formData.pin)
+}
+```
+
+### Variables
+In ES5 you can't use `const` and `let`. Therefore variables should be declared as `var` instead.
+
+```
+var url = window.location.href.split('/')
+var endpoint = url[url.length -1]
+```
+
+### Modules
+You also cannot use ES6 `modules`. Therfore I wrote my JS in on file called `form-helper.js` that can check the path of the browser to know where we are.
+
+```
+var url = window.location.href.split('/')
+var endpoint = url[url.length -1]
+
+if (localStorage && endpoint === "?page=0") {...}
+```
+
+### Loops
+Map, filter, reduce and forEach are not supported on IE. Therefore I wrote loops as the old classic for loop.
+```
+for (var i = 0; i < inputs.length; i++)
+```
+
+When I need more advanced loops, like looping through objects, I handle this server side.
+
+### XmlHttpRequest
+Fetch is not supported on IE, so I've used XHR to push data to the server,
+```
+var url = '../../survey/update-session'
+var request = new XMLHttpRequest()
+    request.open("POST", url)
+    request.setRequestHeader("Content-Type", "application/json");
+    request.send(bodyString)
+```
+
+#### Fallbacks
+The user can also click submit to POST the data to the server.
+
+### Knowing when the browser supports local storage
+You can check whether the browser supports local storage with `if (localStorage) {...}`. In my case I use this to check if the user has any previously stored sessions and loads the sessions page.
+
+#### Fallbacks
+If the browser does not support local storage (or is disabled) it will be impossible to access you session automatically. As a fallback the user can still submit a PIN on the homescreen to load his previous session, but the user has to store it himself.
+
+### Knowing when the browser supports eventlisteners
+Older browsers do not support `eventListeners`.
+```
+// Fallback for IE8 and below
+if(document.addEventListener){
+    inputs[i].addEventListener('change', function() {
+        sendData(this)
+    })
+} else {
+    inputs[i].attachEvent("change", function(e){
+        sendData(this)
+    })
+}
+```
+
+#### Fallback
+If the browser does not support `eventListeners` I use `attachEvent` which is widely supported.
 
 <a name="browsers">
 
@@ -703,6 +783,13 @@ JS stores the return PIN automatically in local storage when the window / browse
 The progression bar on the bottom of the screen is multidemensional. Page progression is indicated via the number of filled circles. The disclosed form progression is indicated via the amount the circle is filled (from bottom to top)
 
 </details>
+
+## Rounding up
+### Use case core functionality
+The survey should at least save the filled answers and give a confirmation when sending the survey. The survey should 'remember' all answers from a session, so when the user returns, he can pick up righht where he left off.
+
+### Accessibility
+The survey should be accessible an readable to all user in any circumstance (both inside and outside). No mouse or trackpad should be needed. JS/Fast internet should not be necessary for the app in order to excecute its core functionality. Fonts/no images should not create any hickups.
 
 
 
