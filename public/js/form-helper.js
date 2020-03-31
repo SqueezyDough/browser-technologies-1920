@@ -27,9 +27,16 @@ function watchFormValues() {
     var inputs = document.getElementsByClassName('base-form__input')
 
     for (var i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener('change', function() {
-            sendData(this)
-        })
+        // Fix IE8 and below
+        if(document.addEventListener){
+            inputs[i].addEventListener('change', function() {
+                sendData(this)
+            })
+        } else {
+            inputs[i].attachEvent("change", function(e){
+                sendData(this)
+            })
+        }
     }
 }
 
