@@ -65,13 +65,27 @@ The functional layer includes all that makes an app usable for its intended purp
   }
   ```
 </details>
+<details>
+  <summary>Creatinng back buttons</summary
+    
+  Sometimes the user makes a mistake. It's better to add back buttons to make it clear the user can go back, then to solely depend on the browser back button.
+        
+    ```
+    <div class='base-form__submit'>
+        <a class="btn -secondary" href="/survey/0/{{user.pin}}">Previous</a>
+        <input class="btn -primary" type="submit" value="Next step">
+    </div>
+    ```
+  
+</details>
+    
 
 #### Dependancies
 All of this is achieved by handling requests on the server. This is the most robust solution since it only depends on the server being up and running and your internet connection.
 
 ### The practical layer
 The practical layer expands the CORE functionality with functionality and visual ordening that makes your app easy to use.
-For an application to be pratical it needs a clear visual ordening of the HTML structure. This is ofcourse achieved with CSS.
+For an application to be pratical it needs a clear visual ordening of the HTML structure. This is ofcourse achieved with CSS. the practical layer should take away any frustration the user could experience when filling the survey. As a measument tool, practicality can be measured in completion time. A good practical survey can be completed relatively fast in comparison with a survey that lacks practicality.
 
 <details>
   <summary>Make it easy to read</summary
@@ -98,18 +112,7 @@ For an application to be pratical it needs a clear visual ordening of the HTML s
 </details>
 
 <details>
-  <summary>Creating back buttons</summary
-    
-  Sometimes the user makes a mistake. It's better to add back buttons to make it clear the user can go back, then to solely depend on the browser back button.
-  
-  #### HTML
-    
-  ```
-    <div class='base-form__submit'>
-        <a class="btn -secondary" href="/survey/0/{{user.pin}}">Previous</a>
-        <input class="btn -primary" type="submit" value="Next step">
-    </div>
-  ```
+  <summary>Styling back buttons</summary
   
   #### CSS with fallback
   When the browser supports flexbox, I put the buttons side-by-side and make the primary button take all available width. This makes it clear to the user (aside from the more prominent button styling) that this is the primary action. As a fallback I put the buttons underneath eachother. The difference in button styling should still do the job.
@@ -140,13 +143,31 @@ For an application to be pratical it needs a clear visual ordening of the HTML s
       }
   }
   ```
-  
-  
 </details>
 
 
+<details>
+  <summary>Returning to a previous session</summary
+    
+  The option to return to your previous session makes the form even more practical. It enables the user to close the form at any time, but on return the user also sees the page where he left off. 
+    
+  ```
+  function setUserProgression(data) {
+    const json = JSON.stringify(data ,null, 2);
+    fs.writeFileSync('./data/survey-users.json', json);
+  }
+  ```
+</details>
+
+#### Dependancies
+The part of the app depends on having browser support for specific CSS properties.
+
+
 ### The delightful layer
-The delightful layer includes everything that sparks some emotion from the user including nice micro-animation or pick up where you left off (basically any emotion that can be considered uplifting)
+The delightful layer includes everything that sparks some emotion from the user including nice micro-animation or pick up where you left off (basically any emotion that can be considered uplifting).
+
+
+
 
 
 ## My App in a nutshell
