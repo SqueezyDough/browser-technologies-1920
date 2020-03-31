@@ -253,6 +253,42 @@ This is ofcourse achieved with CSS.
   ```
 </details>
 
+<details>
+  <summary>Styling Progress bar</summary>
+  The progress has a default width of 100% `minus` 6.5rem. When animations are supported it chhanges this value to 0;
+  
+  ```
+  &[value] {
+        -webkit-appearance: none;
+                appearance: none;
+
+        width: calc(100% - 6.5rem); // fallback
+        max-width: calc(100% - 6.5rem);
+        height: 1rem;
+        border: none;
+
+
+        &::-webkit-progress-bar {
+            background-color: $blue;
+        }
+
+        &::-webkit-progress-value {
+            background-color: $darkRed;
+        }
+
+        @supports (animation: 1s) {
+            width: 0;
+            animation: progession ease-out 1s forwards;
+            animation-delay: .2s;
+        }
+
+        @keyframes progession {
+            to {width: calc(100% - 6.5rem)}
+        }
+    }
+  ```
+</details>
+
 
 #### Dependancies
 The part of the app depends on having browser support for specific CSS properties.
