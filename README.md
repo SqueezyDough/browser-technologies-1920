@@ -9,6 +9,7 @@
 * [The delightful layer](#layer3)
 * [Differences between browsers](#browsers)
 * [Features tests](#tests)
+* [Installation](#install)
 * [Assignments](#Assignments)
 
 <a name="case">
@@ -495,6 +496,8 @@ I'm not using cookies on my website.
 Everything still works, even when you disable it mid-session.
 
 ------
+
+<a name="install">
 
 ## Installation
 ### Clone repo
