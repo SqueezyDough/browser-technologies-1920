@@ -3,24 +3,29 @@
 # Table of contents
 * [Assignments](#Assignments)
 
-## FEEDBACK REQUEST
-* Kun je me feedback geven over m'n oplossingen voor de 3 verschillende lagen?
-
 ## CASE 1: Progressive enhanced survey
 ### Introduction
 This course challenges you to make a survey that is accessible to all users browsing the web. To achieve this I've used the [Progessive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) paradigm.
 
-### Installation
-#### Clone repo
+------
+
+## Installation
+### Clone repo
 `git clone `
 
-#### Install dependencies
+### Install dependencies
 `npm i`
 
-#### Start application
+### Start application
 `npm run start`
 
 ------
+
+My App in a nutshell
+
+
+# [include image]
+
 
 <a name="Assignments"></a>
 ## Assignments
