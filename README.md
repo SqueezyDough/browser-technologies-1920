@@ -7,6 +7,7 @@
 * [The functional layer](#layer1)
 * [The practical layer](#layer2)
 * [The delightful layer](#layer3)
+* [Feature detection and fallbacks](#feature-detection)
 * [Differences between browsers](#browsers)
 * [Features tests](#tests)
 * [Installation](#install)
@@ -374,9 +375,9 @@ The user can still use the submit button to submit the form.
 
 ------
 
-<a name="fallbacks">
+<a name="feature-detection">
 
-## Fallbacks with Client side JS
+## Feature detection and fallbacks
 When you are writing client side javascript it is important to know which javascript methods you are using. Some if not many are not supported by older browsers. 
 
 ### How I wrote JS
