@@ -334,11 +334,34 @@ The user can still use the submit button to submit the form.
 
 ------
 
-## Differences betweem browsers
-### Color contrast
-[image]
 
-### Progress bars
+## Differences betweem browsers
+<details>
+  <summary>Contrast colors</summary
+    Color contrast is lower on chrome.
+    
+  ![6](https://user-images.githubusercontent.com/33430653/78024292-678f9200-7358-11ea-862e-f81710910ee6.png)
+</details>
+
+<details>
+  <summary>Progress bars</summary
+    Progress bar appear different on firefox and IE11 even with:
+    
+    ```
+      -webkit-appearance: none;
+        appearance: none;
+    ```
+    
+  ![5](https://user-images.githubusercontent.com/33430653/78024294-68c0bf00-7358-11ea-8f41-af10fbf6eafb.png)
+</details>
+
+For Safari on iOS I also had to use:
+```
+-webkit-appearance: none;
+    appearance: none;
+```
+
+To overwrite the default button styling.
 
 ------
 
@@ -346,6 +369,10 @@ The user can still use the submit button to submit the form.
 ### Disable images
 I only use a background image when a specific device width is reached. Disabling this will not lead to any troubles.
 
+<details>
+  <summary>No images</summary
+  ![1](https://user-images.githubusercontent.com/33430653/78024300-6b231900-7358-11ea-823c-1bbc7e919563.png)
+</details>
 ------
 
 ### Disable Custom fonts
@@ -359,6 +386,22 @@ $header-font-family: 'Avenir-Heavy', sans-serif;
 ### Colors and color blindness
 I've used hight contrast colors for important content as labels and buttons. Placeholders and unchecked radio buttons have less contrast because these are visually less important. I've tested them to make sure they were still clearly visible in all color blind modes, no colors and in direct sunlight.
 
+For some reason my plugin can't deal with background-images
+
+<details>
+  <summary>Contrast</summary
+  ![4](https://user-images.githubusercontent.com/33430653/78024296-69595580-7358-11ea-9c1f-9213478cc427.png)
+</details>
+
+<details>
+  <summary>No colors</summary
+  ![2](https://user-images.githubusercontent.com/33430653/78024299-6a8a8280-7358-11ea-8d43-fb2c04379471.png)
+</details>
+    
+<details>
+  <summary>Color blindness: Red-blind(Tritanopia)</summary
+  ![3](https://user-images.githubusercontent.com/33430653/78024298-69f1ec00-7358-11ea-922e-87f9a0da18d4.png)
+</details>
 ------
 
 ### No mouse or track pad
@@ -374,6 +417,35 @@ Every :hover also has a :focus pseudoclass
 ```
 
 Radio buttons needed some extra attention since you can't see if it when there is a focus on a selected radio button. Labels are uppercase and have a pointer when :focus is active.
+
+```
+&:focus {
+    + .radio-label {
+        text-transform: uppercase;
+    }
+
+    + .radio-label::before {
+        border: 4px solid $darkBlue;
+        background-color: $yellow;
+    }
+
+    + .radio-label::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right:10px solid $darkBlue;
+    }
+}
+```
+
+<details>
+  <summary>:focus on a radio button</summary
+  ![7](https://user-images.githubusercontent.com/33430653/78024289-665e6500-7358-11ea-9e64-a517561ec60f.png)
+</details>
 
 ------
 
