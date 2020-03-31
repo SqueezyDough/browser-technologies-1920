@@ -83,6 +83,9 @@ The functional layer includes all that makes an app usable for its intended purp
 #### Dependancies
 All of this is achieved by handling requests on the server. This is the most robust solution since it only depends on the server being up and running and your internet connection.
 
+#### Fallbacks
+No fallbacks needed
+
 ### The practical layer
 The practical layer expands the CORE functionality with functionality and visual ordening that makes your app easy to use.
 For an application to be pratical it needs a clear visual ordening of the HTML structure. This is ofcourse achieved with CSS. the practical layer should take away any frustration the user could experience when filling the survey. As a measument tool, practicality can be measured in completion time. A good practical survey can be completed relatively fast in comparison with a survey that lacks practicality.
@@ -114,7 +117,7 @@ For an application to be pratical it needs a clear visual ordening of the HTML s
 <details>
   <summary>Styling back buttons</summary
   
-  #### CSS with fallback
+  #### CSS
   When the browser supports flexbox, I put the buttons side-by-side and make the primary button take all available width. This makes it clear to the user (aside from the more prominent button styling) that this is the primary action. As a fallback I put the buttons underneath eachother. The difference in button styling should still do the job.
   
   ```
@@ -152,15 +155,50 @@ For an application to be pratical it needs a clear visual ordening of the HTML s
   The option to return to your previous session makes the form even more practical. It enables the user to close the form at any time, but on return the user also sees the page where he left off. 
     
   ```
-  function setUserProgression(data) {
-    const json = JSON.stringify(data ,null, 2);
-    fs.writeFileSync('./data/survey-users.json', json);
-  }
+ function findPreviousSession(user) {
+    const uncompletedForm = findNextFormWithBlanks(user.forms)
+
+    if (uncompletedForm) {
+        return uncompletedForm.page
+    } else {
+        // has completed forms but not all
+        const surveyPages = [1, 2, 3]
+        const unVisitedPaths = surveyPages.filter((page, index) => user.forms[index] === undefined)
+
+        return unVisitedPaths[0]
+    }
+}
   ```
 </details>
 
 #### Dependancies
 The part of the app depends on having browser support for specific CSS properties.
+
+#### Fallbacks
+If Flex is not supported, it will put the buttons side-by-side.
+The user can still manually enter the survey pin to return to a previous session.
+
+
+IE doesn't support the main element. Therefore any styling on it doesn't work. To bypass this, I created another container element and added the styling on this element instead.
+```
+.ie-wrapper {
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 3px 4px 0 #00000020;
+    background-color: $red;
+    color: $darkBlue;
+
+    > section, form {
+        position: relative;
+        z-index: 1;
+    }
+
+    @media screen and (min-width: 30rem) {
+        max-width: 30rem;
+    }
+}
+```
 
 
 ### The delightful layer
@@ -245,6 +283,11 @@ The delightful layer includes everything that sparks some emotion from the user 
   ```
 </details>
 
+#### Dependancies
+You'll need JS enables and support local storage to use these features.
+
+#### Fallbacks
+The user can still use the submit button to submit the form.
 
 ## My App in a nutshell
 <details>
