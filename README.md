@@ -392,6 +392,8 @@ if (localStorage && endpoint === "?page=0") {
 }
 ```
 
+------
+
 ### Variables
 In ES5 you can't use `const` and `let`. Therefore variables should be declared as `var` instead.
 
@@ -399,6 +401,8 @@ In ES5 you can't use `const` and `let`. Therefore variables should be declared a
 var url = window.location.href.split('/')
 var endpoint = url[url.length -1]
 ```
+
+------
 
 ### Modules
 You also cannot use ES6 `modules`. Therfore I wrote my JS in on file called `form-helper.js` that can check the path of the browser to know where we are.
@@ -409,6 +413,8 @@ var endpoint = url[url.length -1]
 
 if (localStorage && endpoint === "?page=0") {...}
 ```
+
+------
 
 ### Loops
 Map, filter, reduce and forEach are not supported on IE. Therefore I wrote loops as the old classic for loop.
@@ -431,11 +437,15 @@ var request = new XMLHttpRequest()
 #### Fallbacks
 The user can also click submit to POST the data to the server.
 
+------
+
 ### Knowing when the browser supports local storage
 You can check whether the browser supports local storage with `if (localStorage) {...}`. In my case I use this to check if the user has any previously stored sessions and loads the sessions page.
 
 #### Fallbacks
 If the browser does not support local storage (or is disabled) it will be impossible to access you session automatically. As a fallback the user can still submit a PIN on the homescreen to load his previous session, but the user has to store it himself.
+
+------
 
 ### Knowing when the browser supports eventlisteners
 Older browsers do not support `eventListeners`.
@@ -454,6 +464,8 @@ if(document.addEventListener){
 
 #### Fallback
 If the browser does not support `eventListeners` I use `attachEvent` which is widely supported.
+
+------
 
 <a name="browsers">
 
