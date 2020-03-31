@@ -123,6 +123,28 @@ The functional layer includes all that makes an app usable for its intended purp
     ```
   
 </details>
+
+<details>
+  <summary>Returning to a previous session</summary
+    
+  The option to return to your previous session makes the form even more practical. It enables the user to close the form at any time, but on return the user also sees the page where he left off. 
+    
+  ```
+ function findPreviousSession(user) {
+    const uncompletedForm = findNextFormWithBlanks(user.forms)
+
+    if (uncompletedForm) {
+        return uncompletedForm.page
+    } else {
+        // has completed forms but not all
+        const surveyPages = [1, 2, 3]
+        const unVisitedPaths = surveyPages.filter((page, index) => user.forms[index] === undefined)
+
+        return unVisitedPaths[0]
+    }
+}
+  ```
+</details>
     
 
 #### Dependancies
@@ -194,34 +216,11 @@ For an application to be pratical it needs a clear visual ordening of the HTML s
 </details>
 
 
-<details>
-  <summary>Returning to a previous session</summary
-    
-  The option to return to your previous session makes the form even more practical. It enables the user to close the form at any time, but on return the user also sees the page where he left off. 
-    
-  ```
- function findPreviousSession(user) {
-    const uncompletedForm = findNextFormWithBlanks(user.forms)
-
-    if (uncompletedForm) {
-        return uncompletedForm.page
-    } else {
-        // has completed forms but not all
-        const surveyPages = [1, 2, 3]
-        const unVisitedPaths = surveyPages.filter((page, index) => user.forms[index] === undefined)
-
-        return unVisitedPaths[0]
-    }
-}
-  ```
-</details>
-
 #### Dependancies
 The part of the app depends on having browser support for specific CSS properties.
 
 #### Fallbacks
 If Flex is not supported, it will put the buttons side-by-side.
-The user can still manually enter the survey pin to return to a previous session.
 
 
 IE doesn't support the main element. Therefore any styling on it doesn't work. To bypass this, I created another container element and added the styling on this element instead.
