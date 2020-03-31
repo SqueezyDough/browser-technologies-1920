@@ -352,12 +352,13 @@ The user can still use the submit button to submit the form.
   <summary>Progress bars</summary
     Progress bar appear different on firefox and IE11 even with:
     
-    ```
-      -webkit-appearance: none;
-        appearance: none;
-    ```
+  ```
+    -webkit-appearance: none;
+      appearance: none;
+  ```
     
-  ![5](https://user-images.githubusercontent.com/33430653/78024294-68c0bf00-7358-11ea-8f41-af10fbf6eafb.png)
+    
+   ![5](https://user-images.githubusercontent.com/33430653/78024294-68c0bf00-7358-11ea-8f41-af10fbf6eafb.png)
 </details>
 
 For Safari on iOS I also had to use:
