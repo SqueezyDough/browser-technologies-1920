@@ -12,6 +12,7 @@
 * [Features tests](#tests)
 * [Installation](#install)
 * [Assignments](#Assignments)
+* [Rounding up](#rounding-up)
 
 <a name="case">
   
@@ -796,6 +797,8 @@ JS stores the return PIN automatically in local storage when the window / browse
 The progression bar on the bottom of the screen is multidemensional. Page progression is indicated via the number of filled circles. The disclosed form progression is indicated via the amount the circle is filled (from bottom to top)
 
 </details>
+
+<a name="rounding-up">
 
 ## Rounding up
 ### Use case core functionality
