@@ -1,8 +1,15 @@
 # Browser Technologies @cmda-minor-web 1920
 
 # Table of contents
+* [Case](#Case)
+* [Assignments](#Assignments)
+* [Assignments](#Assignments)
+* [Assignments](#Assignments)
+* [Assignments](#Assignments)
 * [Assignments](#Assignments)
 
+<a name="Case">
+  
 ## CASE 1: Progressive enhanced survey
 ### Introduction
 This course challenges you to make a survey that is accessible to all users browsing the web. To achieve this I've used the [Progessive enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) paradigm.
@@ -73,13 +80,13 @@ In my view the functional term should inherit the usable layer, because a functi
 The functional layer includes all that makes an app usable for its intended purpose. In my case a form should at least be accessible to all user in any circumstance, save the filled answers and give a confirmation when sending the survey. As a measurement tool good functionality can be measured by accuracy. A good functional survey should generate expected, and thus accurate, outcomes. 
 
 <details>
-  <summary>HTML markup</summary
+  <summary>HTML markup</summary>
     
   Related form inputs are being grouped together using the `<fieldset>` tag.
 </details>
 
 <details>
-  <summary>Form handler</summary
+  <summary>Form handler</summary>
     
   User progression is being updated on the server. It first exludes some paths and then looks if the user already has data for this page. If so, it's replaced with the new data and otherwise the form data is pushed to the user.forms object.
        
@@ -101,7 +108,7 @@ The functional layer includes all that makes an app usable for its intended purp
 </details>
 
 <details>
-  <summary>Storing user progression</summary
+  <summary>Storing user progression</summary>
     
   Data is then stored in a JSON file that exists on the server
     
@@ -113,7 +120,7 @@ The functional layer includes all that makes an app usable for its intended purp
   ```
 </details>
 <details>
-  <summary>Creating back buttons</summary
+  <summary>Creating back buttons</summary>
     
   Sometimes the user makes a mistake. It's better to add back buttons to make it clear the user can go back, then to solely depend on the browser back button.
         
@@ -127,7 +134,7 @@ The functional layer includes all that makes an app usable for its intended purp
 </details>
 
 <details>
-  <summary>Returning to a previous session</summary
+  <summary>Returning to a previous session</summary>
     
   The option to return to your previous session makes the form even more practical. It enables the user to close the form at any time, but on return the user also sees the page where he left off. 
     
@@ -162,7 +169,7 @@ The practical layer expands the CORE functionality with a strong visual ordening
 This is ofcourse achieved with CSS.
 
 <details>
-  <summary>Make it easy to read</summary
+  <summary>Make it easy to read</summary>
     
   To make the form easy to read all form text-boxes and labels are put on `display: block`.
     
@@ -186,7 +193,7 @@ This is ofcourse achieved with CSS.
 </details>
 
 <details>
-  <summary>Styling back buttons</summary
+  <summary>Styling back buttons</summary>
   
   #### CSS
   When the browser supports flexbox, I put the buttons side-by-side and make the primary button take all available width. This makes it clear to the user (aside from the more prominent button styling) that this is the primary action. As a fallback I put the buttons underneath eachother. The difference in button styling should still do the job.
@@ -255,7 +262,7 @@ The delightful layer includes everything that sparks some emotion from the user 
 
 
 <details>
-  <summary>Load your previous session(s)</summary
+  <summary>Load your previous session(s)</summary>
     
   With javascript anabled, I can store the survey PINS (ID's) on the client. This enables me to look for these pins on the server when the user comes back.
   
@@ -284,7 +291,7 @@ The delightful layer includes everything that sparks some emotion from the user 
 </details>
 
 <details>
-  <summary>Auto saving when values change</summary
+  <summary>Auto saving when values change</summary>
     
   Form data is usually sent when clicking the submit button. With JS enabled I can do this when values change. This is useful when the useful leaves the page without clicking submit, otherwise the filled in data will be lost.
   
@@ -342,20 +349,15 @@ The user can still use the submit button to submit the form.
 
 ## Differences between browsers
 <details>
-  <summary>Contrast colors</summary
+  <summary>Contrast colors</summary>
     Color contrast is lower on chrome.
     
   ![6](https://user-images.githubusercontent.com/33430653/78024292-678f9200-7358-11ea-862e-f81710910ee6.png)
 </details>
 
 <details>
-  <summary>Progress bars</summary
-    Progress bar appear different on firefox and IE11 even with:
-    
-  ```
-    -webkit-appearance: none;
-      appearance: none;
-  ```
+  <summary>Progress bars</summary>
+    Progress bar appear different on firefox and IE11.
     
     
    ![5](https://user-images.githubusercontent.com/33430653/78024294-68c0bf00-7358-11ea-8f41-af10fbf6eafb.png)
@@ -376,9 +378,11 @@ To overwrite the default button styling.
 I only use a background image when a specific device width is reached. Disabling this will not lead to any troubles.
 
 <details>
-  <summary>No images</summary
+  <summary>No images</summary>
+  
   ![1](https://user-images.githubusercontent.com/33430653/78024300-6b231900-7358-11ea-823c-1bbc7e919563.png)
 </details>
+
 ------
 
 ### Disable Custom fonts
@@ -395,19 +399,23 @@ I've used hight contrast colors for important content as labels and buttons. Pla
 For some reason my plugin can't deal with background-images
 
 <details>
-  <summary>Contrast</summary
+  <summary>Contrast</summary>
+  
   ![4](https://user-images.githubusercontent.com/33430653/78024296-69595580-7358-11ea-9c1f-9213478cc427.png)
 </details>
 
 <details>
-  <summary>No colors</summary
+  <summary>No colors</summary>
+  
   ![2](https://user-images.githubusercontent.com/33430653/78024299-6a8a8280-7358-11ea-8d43-fb2c04379471.png)
 </details>
     
 <details>
-  <summary>Color blindness: Red-blind(Tritanopia)</summary
+  <summary>Color blindness: Red-blind(Tritanopia)</summary>
+  
   ![3](https://user-images.githubusercontent.com/33430653/78024298-69f1ec00-7358-11ea-922e-87f9a0da18d4.png)
 </details>
+
 ------
 
 ### No mouse or track pad
@@ -449,7 +457,8 @@ Radio buttons needed some extra attention since you can't see if it when there i
 ```
 
 <details>
-  <summary>:focus on a radio button</summary
+  <summary>:focus on a radio button</summary>
+  
   ![7](https://user-images.githubusercontent.com/33430653/78024289-665e6500-7358-11ea-9e64-a517561ec60f.png)
 </details>
 
