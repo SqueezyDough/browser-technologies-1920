@@ -858,8 +858,8 @@ With PE you first built a strictly functional layer on which your app can fall b
 
 My app works with good semantic HTML and uses server side javascript to process form data. I've made the server side code as smart as possible without the need of client-side javascript. This created a robust and user-friendly core experience. The follwing features are achieved without the use of client-side JS:
 
-- When you enter you return PIN the server looks up where your last blank field was and redirects you to that page.
-- With your return PIn all of your previously answered questions are already filled in.
+- When you enter your return PIN the server looks up where your last blank field was and redirects you to that page.
+- With your return Pin all of your previously answered questions are already filled in.
 - The last (overview page) shows all your answers and tells you what anwers are blank.
 
 I've also made sure you could use tab to navigate through the form and tested it with a screenreader
@@ -868,12 +868,12 @@ I've also made sure you could use tab to navigate through the form and tested it
 Without CSS forms can be hard to read. Adding good CSS adds a visual hierarchy to the HTML which makes your app more practical to use. I've made sure the input fields and labels where standing under each other to improve completion time. I also made sure the website can be used on all screen sizes and included fallbacks for things like `flexbox` and `mix-blend-mode`.
 
 #### Adding delight
-I've tried to add delight by auto 'remembering' your return PIN using client-side JS and local storage and show your previous sessions when you return to the homepage. I decided to write JS that can be interpreted by most browsers, including IE 10 and 11. This meant I couldn't use es modules or things that can loop through objects and arrays like `array.forEach`. I engineered my code in a way that the difficult stuff like those loops are handled server side and only send the necessary (simpler) data from the client to the server
+I've tried to add delight by auto 'remembering' your return PIN using client-side JS and local storage and show your previous sessions when you return to the homepage. I decided to write JS that can be interpreted by most browsers, including IE 10 and 11. This meant I couldn't use ES modules or things that can loop through objects and arrays like `array.forEach`. I engineered my code in a way that the difficult stuff like those loops are handled server side and only send the necessary (simpler) data from the client to the server
 
 #### Feature detection
-I learned how to detect specific JS features, by adding `if (localStorage)` to just name an example. With every new feature I had to decide if I had to write a fallback for this feature. Some features don't need a fallback because it is fine to not have it if the browser won't support it. For example, I do check if localStorage is supported to make sure JS won't give me an error when it's not, but don't give any other instructions when there is no support. That is fine, because my app also works without localStorage. In other words it can always fall back to the functional layer.
+I learned how to detect specific JS features, by adding `if (localStorage)` to just name an example. With every new feature I had to decide if I had to write a fallback for this feature. Some features don't need a fallback because it is fine to not have it if the browser won't support it. For example, I do check if localStorage is supported to make sure JS won't give me an error when it's not, but don't give any other instructions when there is no support. That is fine, because my app also works without localStorage. In other words, it can always fall back to the functional layer.
 
-Other features do need a fallback however. I've made my background-color red and if `mix-blend-mode` is supported I can use a cool animated CMD background. I've also created a fallback for flexbox. If it is supported, I can show them side-by-side and use `flex-grow` to take all the available space when you hover over/focus on it. Just some nice details you can use when you have the support.
+Other features do need a fallback however. I've made my background-color red and, if `mix-blend-mode` is supported, I can use a cool animated CMD background. I've also created a fallback for flexbox. If it is supported, I can show them side-by-side and use `flex-grow` to take all the available space when you hover over/focus on it. Just some nice details you can use when you have the necessary support.
 
 ### Rounding up
 Because of this course I finally feel like I can build a proper (PE) app. I liked how we had to think about making the core experience as good as you possibly can without using client-side javascript. I realised I might have used client-side JS too early without thinking about how it could be done in a way more users can benefit from it. I also learned that making client-side JS and CSS optional makes your app more robust for when some packages could not be downloaded and how to create fallbacks for when you do use newer features. This course has ultimately changed the way I build apps in the future.
