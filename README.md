@@ -28,6 +28,9 @@ This course challenges you to make a survey that is accessible to all users brow
 ### How it works
 My app uses (just like kahoot) a PIN to access a previous session. The PIN can be submitted via the homescreen to access it or a new survey can be started. When the user starts a new session the PIN is stored on the server + all the submitted answers. When the user returns and fills in his PIN number on the homescreen, the user is redirected to the page with the first blank input field.
 
+#### Wireflow
+<img width="750" alt="f79cfc3cf42a0365edf40fe83aecb897" src="https://user-images.githubusercontent.com/33430653/76962825-39ee2600-6920-11ea-9637-da659c125273.png">
+
 ### Enhancing the PIN
 When JS and localstorage are both enabled, some extra magic happens. You automatically see your previous session on the homescreen. From here you can either continue or start a new survey.
 
@@ -837,6 +840,8 @@ The progression bar on the bottom of the screen is multidemensional. Page progre
 <a name="rounding-up">
 
 ## Conclusion
+This course is about creating a robust experience where every user can use your website, regardless of the browser, device or context is used. To reach this goal I've built a progressive enhavced website (PE).
+
 ### Use case core functionality
 The survey should at least save the filled answers and give a confirmation when sending the survey. The survey should 'remember' all answers from a session, so when the user returns, he can pick up righht where he left off.
 
