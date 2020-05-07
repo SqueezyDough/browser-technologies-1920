@@ -836,7 +836,7 @@ The progression bar on the bottom of the screen is multidemensional. Page progre
 
 <a name="rounding-up">
 
-## Rounding up
+## Conclusion
 ### Use case core functionality
 The survey should at least save the filled answers and give a confirmation when sending the survey. The survey should 'remember' all answers from a session, so when the user returns, he can pick up righht where he left off.
 
