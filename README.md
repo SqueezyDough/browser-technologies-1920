@@ -875,4 +875,5 @@ I learned how to detect specific JS features, by adding `if (localStorage)` to j
 
 Other features do need a fallback however. I've made my background-color red and if `mix-blend-mode` is supported I can use a cool animated CMD background. I've also created a fallback for flexbox. If it is supported, I can show them side-by-side and use `flex-grow` to take all the available space when you hover over/focus on it. Just some nice details you can use when you have the support.
 
-
+### Rounding up
+Because of this course I finally feel like I can build a proper PE app. I liked how we had to think about maiking the core experience as good as you possibly can without using client-side javascript. I realised I might have used client-side JS to early without thinking about how it could be done in a way more users can benfit from it. I also learned that making client-side JS and CSS optional makes your app more robust for when some packages could not be downloaded.
