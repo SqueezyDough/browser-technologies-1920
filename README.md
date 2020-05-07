@@ -849,8 +849,12 @@ Realistically, it is impossible to provide a fallback for all scenario's. Implem
 With PE you first built a strictly functional layer on which your app can fallback to when client-dependant features are not working. You then try to add a new layer to make your app more practical to use using CSS and you can follow up on that using Javascript to add user delight.
 
 #### Core functionality
-##### The goal i've set for the core functionality
+##### The goals i've set for the functional layer
+###### Functionality
 > The survey should at least save the filled answers and give a confirmation when sending the survey. The survey should 'remember' all answers from a session, so when the user returns, he can pick up right where he left off.
+
+###### Accessibility
+> The survey should be accessible an readable to all user in any circumstance (both inside and outside). No mouse or trackpad should be needed. JS/Fast internet should not be necessary for the app in order to excecute its core functionality. Fonts/no images should not create any hickups.
 
 My app works with good semantic HTML and uses server side javascript to process form data. I've made the server side code as smart as possible without the need of client-side javascript. This created a robust and user-friendly core experience. The follwing features are achieved without the use of client-side JS:
 
@@ -858,12 +862,15 @@ My app works with good semantic HTML and uses server side javascript to process 
 - With your return PIn all of your previously answered questions are already filled in.
 - The last (overview page) shows all your answers and tells you what anwers are blank.
 
+I've also made sure you could use tab to navigate through the form and tested it with a screenreader
+
 #### Making it practical
-Without CSS forms can be hard to read. Adding good CSS add a viusla structure to 
+Without CSS forms can be hard to read. Adding good CSS adds a visual hierarchy to the HTML which makes your app more practical to use. I've made sure the input fields and labels where standing under each other to improve completion time. I also made sure the website can be used on all screen sizes and included fallbacks for things like `flexbox` and `mix-blend-mode`.
 
+#### Adding delight
+I've tried to add delight by auto 'remembering' your return PIN using client-side JS and local storage and show your previous sessions when you return to the homepage. I decided to write JS that can be interpreted by most browsers, including IE 10 and 11. This meant I couldn't use es modules or things that can loop through objects and arrays like `array.forEach`. I engineered my code in a way that the difficult stuff like those loops are handled server side and only send the necessary (simpler) data from the client to the server
 
-### Accessibility
-The survey should be accessible an readable to all user in any circumstance (both inside and outside). No mouse or trackpad should be needed. JS/Fast internet should not be necessary for the app in order to excecute its core functionality. Fonts/no images should not create any hickups.
-
+#### Feature detection
+I learned how to detect specific JS features, by adding `if (localStorage)` to just name an example. With every new feature I had to decide if I had to write a fallback for this feature. Some features don't need a fallback because it is fine to not have it if the browser won't support it.
 
 
