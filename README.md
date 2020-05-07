@@ -846,7 +846,7 @@ This course is about creating a robust experience where every user can use your 
 Realistically, it is impossible to provide a fallback for all scenario's. Implementing fallbacks sometimes need a lot of work. Although it is important to support older browsers, you'll have to cross a line somewhere to reduce development costs. It's all about finding a balance between trying to reach as much users as possible and development costs. To find this balance it's normally good to look at who is visiting your website. If a good portion of your users is still using IE8, this is definitely a browser you want to test for. However I do not have these numbers. When picking for which browsers I would be testing, I decided to focus on all modern browser and anything above IE 8 and anything above android 4.4.4. IE 11 and 10 provided enough bad support to learn how to create good fallbacks.
 
 ### Implementing PE
-With PE you first built a strictly functional layer on which your app can fallback to when client-dependant features are not working. You then try to add a new layer to make your app more practical to use using CSS and you can follow up on that using Javascript to add user delight.
+With PE you first built a strictly functional layer on which your app can fall back to when client-dependant features are not working. You then try to add a new layer to make your app more practical to use using CSS and you can follow up on that using Javascript to add user delight.
 
 #### Core functionality
 ##### The goals i've set for the functional layer
