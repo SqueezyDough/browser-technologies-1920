@@ -846,14 +846,21 @@ This course is about creating a robust experience where every user can use your 
 Realistically, it is impossible to provide a fallback for all scenario's. Implementing fallbacks sometimes need a lot of work. Although it is important to support older browsers, you'll have to cross a line somewhere to reduce development costs. It's all about finding a balance between trying to reach as much users as possible and development costs. To find this balance it's normally good to look at who is visiting your website. If a good portion of your users is still using IE8, this is definitely a browser you want to test for. However I do not have these numbers. When picking for which browsers I would be testing, I decided to focus on all modern browser and anything above IE 8 and anything above android 4.4.4. IE 11 and 10 provided enough bad support to learn how to create good fallbacks.
 
 ### Implementing PE
+With PE you first built a strictly functional layer on which your app can fallback to when client-dependant features are not working. You then try to add a new layer to make your app more practical to use using CSS and you can follow up on that using Javascript to add user delight.
+
 #### Core functionality
-My app works with good semantic HTML and uses server side javascript to process form data. I've made the server side code as smart as possible without the need of client-side javascript. This created a robust and user-friendly core experience.
+##### The goal i've set for the core functionality
+> The survey should at least save the filled answers and give a confirmation when sending the survey. The survey should 'remember' all answers from a session, so when the user returns, he can pick up right where he left off.
+
+My app works with good semantic HTML and uses server side javascript to process form data. I've made the server side code as smart as possible without the need of client-side javascript. This created a robust and user-friendly core experience. The follwing features are achieved without the use of client-side JS:
 
 - When you enter you return PIN the server looks up where your last blank field was and redirects you to that page.
 - With your return PIn all of your previously answered questions are already filled in.
+- The last (overview page) shows all your answers and tells you what anwers are blank.
 
+#### Making it practical
+Without CSS forms can be hard to read. Adding good CSS add a viusla structure to 
 
-The survey should at least save the filled answers and give a confirmation when sending the survey. The survey should 'remember' all answers from a session, so when the user returns, he can pick up righht where he left off.
 
 ### Accessibility
 The survey should be accessible an readable to all user in any circumstance (both inside and outside). No mouse or trackpad should be needed. JS/Fast internet should not be necessary for the app in order to excecute its core functionality. Fonts/no images should not create any hickups.
